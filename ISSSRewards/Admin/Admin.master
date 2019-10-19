@@ -3,7 +3,7 @@
     <asp:ContentPlaceHolder ID="nestedHead" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-owl">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-owl mb-0">
       <a class="navbar-brand" href="#">ISSS Rewards</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
@@ -12,8 +12,8 @@
       </div>
     </nav>
     <asp:ContentPlaceHolder ID="nestedBody" runat="server"></asp:ContentPlaceHolder>
-    <footer class="container fixed-bottom">
+    <footer class="fixed-bottom bg-dark">
         <hr />
-        <p class="lead footer-text text-center">&copy; Temple International Students and Services, 2019</p>
+        <p class="lead footer-text text-muted text-center">&copy; Temple International Students and Services, 2019</p>
     </footer>
 </asp:Content>

@@ -13,5 +13,16 @@ namespace ISSSRewards.Admin.Accounts
         {
 
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../dashboard.aspx");
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("add.aspx");
+
+        }
     }
 }
