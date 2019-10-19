@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ISSSRewards.Student {
-    
-    
-    public partial class Student {
-        
+namespace ISSSRewards.Student
+{
+
+
+    public partial class Student
+    {
+
         /// <summary>
         /// nestedHead control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace ISSSRewards.Student {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder nestedHead;
-        
+
         /// <summary>
         /// nestedBody control.
         /// </summary>

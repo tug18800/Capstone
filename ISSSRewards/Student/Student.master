@@ -1,9 +1,22 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/master.Master" AutoEventWireup="true" CodeBehind="Student.master.cs" Inherits="ISSSRewards.Student.Student" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <asp:ContentPlaceHolder ID="nestedHead" runat="server"></asp:ContentPlaceHolder>
+    <link href="css/style.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    <!--NAV BAR HERE-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-owl">
+      <a class="navbar-brand" href="#">ISSS Rewards</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="home.aspx">Home</a>
+            <a class="nav-item nav-link" href="events.aspx">Events</a>
+            <a class="nav-item nav-link" href="rewards.aspx">Rewards</a>
+        </div>
+      </div>
+    </nav>
     <asp:ContentPlaceHolder ID="nestedBody" runat="server"></asp:ContentPlaceHolder>
-    <!--FOOTER HERE-->
+    <footer class="container fixed-bottom">
+        <hr />
+        <p class="lead footer-text text-center">&copy; Temple International Students and Services, 2019</p>
+    </footer>
 </asp:Content>

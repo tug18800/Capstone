@@ -83,6 +83,7 @@
     <Content Include="Admin\Rewards\update.aspx" />
     <Content Include="default.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="Student\css\style.css" />
     <Content Include="Student\events.aspx" />
     <Content Include="Student\home.aspx" />
     <Content Include="Student\rewards.aspx" />
@@ -250,9 +251,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Student\css\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
