@@ -11,6 +11,8 @@ namespace ISSSRewards.Admin.Accounts
     public partial class edit : System.Web.UI.Page
     {
         List<Students> student;
+        List<Event> events;
+        List<Reward> rewards;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -19,17 +21,15 @@ namespace ISSSRewards.Admin.Accounts
                 student = new List<Students>();
                 student.Add(s);
 
-                gvStudent.DataSource = student;
-                gvStudent.DataBind();
+                BindStudentGV(student);
                 string edit = Request.QueryString["edit"];
-
-
-
+                
                 if(edit == "events")
                 {
                     
                     gvRewards.Visible = false;
-                    List<Event> events = LoadEventList();
+                    gvEvents.Visible = true;
+                    events = LoadEventList();
                     BindDDL(s, events);
                     BindEventGV(student, gvEvents);
                     
@@ -37,18 +37,31 @@ namespace ISSSRewards.Admin.Accounts
                 else if(edit == "rewards")
                 {
                     gvEvents.Visible = false;
-                    List<Reward> rewards = LoadRewardList();
+                    gvRewards.Visible = true;
+                    rewards = LoadRewardList();
                     BindDDL(s, rewards);
-                }
-
-                
+                    BindRewardGV(student, gvEvents);
+                }             
             }
+        }
+
+        private void BindStudentGV(List<Students> student)
+        {
+            student[0].CalcPoints();
+            gvStudent.DataSource = student;
+            gvStudent.DataBind();
         }
 
         private void BindEventGV(List<Students> student, GridView gvEvents)
         {
             gvEvents.DataSource = student[0].Events;
             gvEvents.DataBind();
+        }
+
+        private void BindRewardGV(List<Students> student, GridView gvEvents)
+        {
+            gvRewards.DataSource = student[0].Rewards;
+            gvRewards.DataBind();
         }
 
         private List<Reward> LoadRewardList()
@@ -77,7 +90,6 @@ namespace ISSSRewards.Admin.Accounts
             return list;
         }
 
-
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("view.aspx");
@@ -90,16 +102,6 @@ namespace ISSSRewards.Admin.Accounts
 
         }
 
-        protected void btnAddSelector_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void BindDDL(Students s, List<Event> events)
         {
             foreach (Event ev in s.Events)
@@ -110,9 +112,7 @@ namespace ISSSRewards.Admin.Accounts
                     {
                         events.RemoveAt(i);
                     }
-                }
-                    
-                
+                }                                  
             }
 
             ddlSelector.DataTextField = "Title";
@@ -125,17 +125,122 @@ namespace ISSSRewards.Admin.Accounts
         {
             foreach (Reward r in s.Rewards)
             {
-                foreach (Reward re in rewards)
+                for (int i = 0; i < rewards.Count; i++)
                 {
-                    if (r.ID == re.ID)
+                    if (r.ID == rewards[i].ID)
                     {
-                        rewards.Remove(re);
+                        rewards.RemoveAt(i);
                     }
                 }
             }
-
+            
+            ddlSelector.DataTextField = "Title";
+            ddlSelector.DataValueField = "ID";
             ddlSelector.DataSource = rewards;
             ddlSelector.DataBind();
+        }
+
+        protected void gvEvents_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            Students s = (Students)Session["user"];
+            student = new List<Students>();
+            string ID = gvEvents.Rows[e.RowIndex].Cells[0].Text;
+
+            for(int i =0; i < s.Events.Count; i++)
+            {
+                if (s.Events[i].ID == ID)
+                {
+                    s.Events.RemoveAt(i);
+                }
+            }
+
+            student.Add(s);
+            events = LoadEventList();
+            BindDDL(s, events);
+            BindEventGV(student, gvEvents);
+            BindStudentGV(student);
+            Session["user"] = s;
+        }
+
+        protected void gvRewards_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            Students s = (Students)Session["user"];
+            student = new List<Students>();
+            string ID = gvRewards.Rows[e.RowIndex].Cells[0].Text;
+
+            for (int i = 0; i < s.Rewards.Count; i++)
+            {
+                if (s.Rewards[i].ID == ID)
+                {
+                    s.Rewards.RemoveAt(i);
+                }
+            }
+
+            student.Add(s);
+            rewards = LoadRewardList();
+            BindDDL(s, rewards);
+            BindRewardGV(student, gvRewards);
+            BindStudentGV(student);
+            Session["user"] = s;
+        }
+
+        protected void btnAddSelector_Click(object sender, EventArgs e)
+        {
+            string edit = Request.QueryString["edit"];
+            Students s = (Students)Session["user"];
+            student = new List<Students>();
+
+
+            if (edit == "events")
+            {
+                events = LoadEventList();
+                string id = ddlSelector.SelectedValue;
+
+                foreach (Event ev in events)
+                {
+                    if (ev.ID == id)
+                    {
+                        s.Events.Add(ev);
+                        break;
+                    }
+                }
+
+                student.Add(s);             
+                BindEventPage(s, events);
+            }
+            else if (edit == "rewards")
+            {
+                rewards = LoadRewardList();
+                string id = ddlSelector.SelectedValue;
+
+                foreach (Reward r in rewards)
+                {
+                    if (r.ID == id)
+                    {
+                        s.Rewards.Add(r);
+                        break;
+                    }
+                }
+
+                student.Add(s);
+                BindRewardPage(s, rewards);
+            }
+        }
+
+        private void BindEventPage(Students s, List<Event> events)
+        {
+            BindDDL(s, events);
+            BindEventGV(student, gvEvents);
+            BindStudentGV(student);
+            Session["user"] = s;
+        }
+
+        private void BindRewardPage(Students s, List<Reward> rewards)
+        {
+            BindDDL(s, rewards);
+            BindRewardGV(student, gvRewards);
+            BindStudentGV(student);
+            Session["user"] = s;
         }
     }
 }

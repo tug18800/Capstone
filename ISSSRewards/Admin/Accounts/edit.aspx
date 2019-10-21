@@ -43,9 +43,9 @@
                 </div>
             
 <!--EVENTS GRIDVIEW-->
-                <asp:GridView runat="server" ID="gvEvents" CssClass="table" AutoGenerateColumns="false" GridLines="None">
+                <asp:GridView runat="server" ID="gvEvents" CssClass="table" AutoGenerateColumns="false" GridLines="None" OnRowDeleting="gvEvents_RowDeleting">
                     <Columns>
-                        <asp:BoundField DataField="ID" HeaderText="ID" />
+                        <asp:BoundField DataField="ID" HeaderText="ID"/>
                         <asp:BoundField DataField="Title" HeaderText="Title" />
                         <asp:BoundField DataField="Date" HeaderText="Date" />
                         <asp:BoundField DataField="Points" HeaderText="Points" />
@@ -54,7 +54,7 @@
                 </asp:GridView>
 
 <!--REWARDS GRIDVIEW-->
-             <asp:GridView runat="server" ID="gvRewards" Visible="false" CssClass="table" AutoGenerateColumns="false" GridLines="None">
+             <asp:GridView runat="server" ID="gvRewards" Visible="false" CssClass="table" AutoGenerateColumns="false" GridLines="None" OnRowDeleting="gvRewards_RowDeleting">
                     <Columns>
                         <asp:BoundField DataField="ID" HeaderText="ID" />
                         <asp:BoundField DataField="Title" HeaderText="Title" />
