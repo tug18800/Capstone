@@ -13,11 +13,12 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
     <div class="container">
+        <p class="text-center h1 mb-3">Account Maintenance</p> 
 
 <!--TITLE-->
         <div runat="server" class="card container shadow w-75">
-            <div class="card-title mb-0 text-center">
-                <asp:Label ID="lblTitle" runat="server" CssClass="display-4"></asp:Label>
+            <div class="card-title my-3 text-center">
+                <asp:Label ID="lblTitle" runat="server" CssClass="lead text-large"></asp:Label>
             </div>
 
 <!--STUDENT TABLE-->
@@ -33,7 +34,7 @@
 
 <!--SELECTOR ROW-->
                 <div class="row my-5">
-                    <div class="col-4"><asp:Label runat="server" CssClass="lead" ID="lblSelector"></asp:Label></div>
+                    <div class="col-4 text-right"><asp:Label runat="server" CssClass="lead" ID="lblSelector"></asp:Label></div>
                     <div class="col-4">
                         <asp:DropDownList runat="server" ID="ddlSelector" CssClass="form-control  d-block mx-auto">
                             <asp:ListItem Selected="True" Text="--Select--"></asp:ListItem>

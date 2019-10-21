@@ -19,35 +19,25 @@
                 <div class="row mb-5">
                     <div class="col text-right lead"><p>Enter TUID/Email</p></div>
                     <div class="col"><asp:TextBox runat="server" ID="txtID" CssClass="form-control w-75 mx-auto"></asp:TextBox></div>
-                    <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mx-auto" Text="Search" /></div>
+                    <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mx-auto" Text="Search" OnClick="btnSearch_Click" /></div>
                 </div>
-                <asp:GridView runat="server" ID="gvResults" Visible="false" CssClass="table table-bordered"></asp:GridView>
-                <table class="table ">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">First Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">0000000001</th>
-                            <td>-</td>
-                            <td>Spindler</td>
-                            <td>Keeth</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <hr />
-                <div class="form-group" style="padding-bottom: 150px;">
+
+                <asp:GridView runat="server" ID="gvAccount" GridLines="None" AutoGenerateColumns="false" CssClass="table">
+                    <Columns>
+                        <asp:BoundField DataField="ID" HeaderText="ID" />
+                        <asp:BoundField DataField="UserType" HeaderText="User Type" />
+                        <asp:BoundField DataField="LName" HeaderText="Last Name" />
+                        <asp:BoundField DataField="FName" HeaderText="First Name" />
+                    </Columns>
+                </asp:GridView>
+
+                <div id="chkbxAdmin" runat="server" visible="false" class="form-group" style="padding-bottom: 150px;">
                     <p class="form-check-label lead">Privilages</p>
                     <asp:CheckBoxList ID="ckbxPrivleges" runat="server" CssClass="form-check-input d-block mx-auto">
-                        <asp:ListItem>Superadmin</asp:ListItem>
-                        <asp:ListItem>Update Accounts</asp:ListItem>
-                        <asp:ListItem>Events</asp:ListItem>
-                        <asp:ListItem>Rewards</asp:ListItem>
+                        <asp:ListItem Value="0">Superadmin</asp:ListItem>
+                        <asp:ListItem Value="1">Update Accounts</asp:ListItem>
+                        <asp:ListItem Value="2">Events</asp:ListItem>
+                        <asp:ListItem Value="3">Rewards</asp:ListItem>
                     </asp:CheckBoxList>
                 </div>
             </div>
@@ -55,10 +45,10 @@
     </div>
       <div class="row w-100 mt-5 bottom">
             <div class="col">
-                <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light"/>
+                <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click"/>
             </div>
             <div class="col">
-                <asp:Button runat="server" ID="btnAdd" Text="Add Account" CssClass="btn d-block mx-auto bg-owl text-light"/>
+                <asp:Button runat="server" ID="btnAdd" Text="Add Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click"/>
             </div>
         </div>
 </asp:Content>

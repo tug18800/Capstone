@@ -26,7 +26,8 @@ namespace ISSSRewards.Admin.Accounts
                 
                 if(edit == "events")
                 {
-                    
+                    lblTitle.Text = "Edit Events";
+                    lblSelector.Text = "Select Event";
                     gvRewards.Visible = false;
                     gvEvents.Visible = true;
                     events = LoadEventList();
@@ -36,6 +37,8 @@ namespace ISSSRewards.Admin.Accounts
                 }
                 else if(edit == "rewards")
                 {
+                    lblTitle.Text = "Edit Rewards";
+                    lblSelector.Text = "Select Reward";
                     gvEvents.Visible = false;
                     gvRewards.Visible = true;
                     rewards = LoadRewardList();

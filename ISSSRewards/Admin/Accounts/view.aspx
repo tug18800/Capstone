@@ -13,12 +13,12 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">/
     <div class="container">
-
+    <p class="text-center h1 mb-3">Account Maintenance</p>  
 <!--TITLE-->
         <div runat="server" class="card container shadow w-75">
-            <div class="card-title mb-0"><p class="text-center display-4">View Account</p></div>
-            <hr class="d-block mx-auto w-75" />
-
+            <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">View Account</p></div>
+            <hr />
+            <div class="card-body mt-0">
 <!--ERROR STATUS LABEL-->
             <asp:Label ID="lblStatus" runat="server" Visible="false" CssClass="bg-error text-center mx-auto w-25 mb-5 rounded"></asp:Label>
 
@@ -107,6 +107,7 @@
                 <div class="text-center">
                     <asp:Button runat="server" ID="btnUpdate" Text="Update Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click"/>
                 </div>
+            </div>
             </div>
         </div>
     </div>   

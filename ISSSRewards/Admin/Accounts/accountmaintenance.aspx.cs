@@ -16,7 +16,13 @@ namespace ISSSRewards.Admin.Accounts
         List<Admins> admin;
         protected void Page_Load(object sender, EventArgs e)
         {
-            users = LoadUsers();
+            users = (List<Users>)Session["list"];
+            if(users == null)
+            {
+                users = LoadUsers();
+                Session["list"] = users;
+            }
+
         }
 
         private List<Users> LoadUsers()

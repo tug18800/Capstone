@@ -12,20 +12,20 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">/
     <div class="container">
-        <p class="text-center display-4">Account Maintenance</p>
-    
+        <p class="text-center h1 mb-3">Account Maintenance</p>   
+        
+<!--TITLE-->
         <div class="card container shadow">
-            <div class="card-title"><p class="h3 text-center">Search Accounts</p></div>
+            <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">Search Accounts</p></div>
             <hr />
             <div class="card-body">
 
 <!--SEARCH FUNCTION-->
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col text-right lead"><p>Enter TUID/Email</p></div>
                     <div class="col"><asp:TextBox runat="server" ID="txtID" CssClass="form-control w-75 mx-auto"></asp:TextBox></div>
                     <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mx-auto" Text="Search" OnClick="btnSearch_Click" /></div>
                 </div>
-                <hr />
 
 <!--ERROR STATUS LABEL-->
                 <div class="text-center">

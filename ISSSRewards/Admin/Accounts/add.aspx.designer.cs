@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ISSSRewards.Admin.Accounts
-{
-
-
-    public partial class add
-    {
-
+namespace ISSSRewards.Admin.Accounts {
+    
+    
+    public partial class add {
+        
         /// <summary>
         /// txtID control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace ISSSRewards.Admin.Accounts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtID;
-
+        
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -31,16 +29,25 @@ namespace ISSSRewards.Admin.Accounts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-
+        
         /// <summary>
-        /// gvResults control.
+        /// gvAccount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvResults;
-
+        protected global::System.Web.UI.WebControls.GridView gvAccount;
+        
+        /// <summary>
+        /// chkbxAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl chkbxAdmin;
+        
         /// <summary>
         /// ckbxPrivleges control.
         /// </summary>
@@ -49,7 +56,7 @@ namespace ISSSRewards.Admin.Accounts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList ckbxPrivleges;
-
+        
         /// <summary>
         /// btnBack control.
         /// </summary>
@@ -58,7 +65,7 @@ namespace ISSSRewards.Admin.Accounts
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBack;
-
+        
         /// <summary>
         /// btnAdd control.
         /// </summary>

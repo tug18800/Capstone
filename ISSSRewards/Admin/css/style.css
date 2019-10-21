@@ -19,14 +19,14 @@
     color: #8B0000;
 }
 
-
 .footer-text
 {
     font-size: .8rem !important;
 }
 
-.col-b-r
+.text-large
 {
-    border-right: 2px solid rgba(0,0,0,.25);
+    font-size: 1.5rem !important;
 }
+
 
