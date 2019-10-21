@@ -13,8 +13,20 @@
 .bg-owl {
     background-color: #8c2132 !important;
 }
+
+.bg-error {
+    background-color: #ffbaba;
+    color: #8B0000;
+}
+
+
 .footer-text
 {
     font-size: .8rem !important;
+}
+
+.col-b-r
+{
+    border-right: 2px solid rgba(0,0,0,.25);
 }
 

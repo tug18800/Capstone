@@ -33,8 +33,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">0000000000</th>
-                            <td>Student</td>
+                            <th scope="row">0000000001</th>
+                            <td>-</td>
                             <td>Spindler</td>
                             <td>Keeth</td>
                         </tr>

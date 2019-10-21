@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Admin\Accounts\accountmaintenance.aspx" />
     <Content Include="Admin\Accounts\add.aspx" />
+    <Content Include="Admin\Accounts\edit.aspx" />
     <Content Include="Admin\Accounts\update.aspx" />
     <Content Include="Admin\Accounts\view.aspx" />
     <Content Include="Admin\css\style.css" />
@@ -104,6 +105,18 @@
     <Compile Include="Admin\Accounts\add.aspx.designer.cs">
       <DependentUpon>add.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Accounts\edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Accounts\edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Accounts\models\Admins.cs" />
+    <Compile Include="Admin\Accounts\models\Event.cs" />
+    <Compile Include="Admin\Accounts\models\Reward.cs" />
+    <Compile Include="Admin\Accounts\models\Students.cs" />
+    <Compile Include="Admin\Accounts\models\Users.cs" />
     <Compile Include="Admin\Accounts\update.aspx.cs">
       <DependentUpon>update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
