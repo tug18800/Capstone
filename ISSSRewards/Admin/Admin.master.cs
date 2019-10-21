@@ -13,5 +13,15 @@ namespace ISSSRewards.Admin
         {
 
         }
+
+        public class X
+        {
+            string x = "test";
+
+            public X(string x)
+            {
+                this.x = x;
+            }
+        }
     }
 }
