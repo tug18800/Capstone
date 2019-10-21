@@ -104,10 +104,17 @@ namespace ISSSRewards.Admin.Accounts
 
         private void RemovePointsField(GridView gvResults)
         {
-            BoundField bf = (BoundField)gvResults.Columns[4];
-            if (bf != null && bf is BoundField)
+            try
             {
-                gvResults.Columns.RemoveAt(4);
+                BoundField bf = (BoundField)gvResults.Columns[4];
+                if (bf != null && bf.HeaderText == "Points")
+                {
+                    gvResults.Columns.RemoveAt(4);
+                }
+            }
+            catch
+            {
+
             }
         }
 

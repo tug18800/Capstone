@@ -25,7 +25,7 @@
 <!--SEARCH FUNCTION-->
             <div class="row my-3">
                 <div class="col text-right lead"><p>Enter TUID/Email</p></div>
-                <div class="col"><asp:TextBox runat="server" ID="txtID" Text="0000000001" CssClass="form-control w-75 mx-auto"></asp:TextBox></div>
+                <div class="col"><asp:TextBox runat="server" ID="txtID" CssClass="form-control w-75 mx-auto"></asp:TextBox></div>
                 <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mx-auto" Text="Search" OnClick="btnSearch_Click" /></div>
             </div>
 

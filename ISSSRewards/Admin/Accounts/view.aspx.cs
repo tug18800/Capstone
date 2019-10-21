@@ -15,6 +15,9 @@ namespace ISSSRewards.Admin.Accounts
         List<Students> student;
 
         Users user;
+        Students s;
+        Admins a;
+ 
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -22,20 +25,22 @@ namespace ISSSRewards.Admin.Accounts
                 users = (List<Users>)Session["list"];
                 user = (Users)Session["user"];
 
+                UpdateList(users, user);
+
                 if(user != null)
                 {
-                    if(user is Students)
+                    if(user.UserType == "Student")
                     {
                         adminPriv.Visible = false;
                         studentStat.Visible = true;
-                        Students result = (Students)user;
-                        FillStudentLabels(result);
+
+                        Students s = (Students)user;
+                        FillStudentLabels(s);
                         student = new List<Students>();
-                        student.Add(result);
+                        student.Add(s);
                         AddPointsField(gvResults);
                         gvResults.DataSource = student;
                         gvResults.DataBind();
-
                     }
                     else
                     {
@@ -44,7 +49,7 @@ namespace ISSSRewards.Admin.Accounts
                         Admins a = (Admins)user;
                         FillAdminPrivileges(a);
                         admin = new List<Admins>();
-                        admin.Add((Admins)a);
+                        admin.Add(a);
                         gvResults.DataSource = admin;
                         gvResults.DataBind();
                     }
@@ -67,15 +72,20 @@ namespace ISSSRewards.Admin.Accounts
             users = (List<Users>)Session["list"];
             foreach (Users u in users)
             {
-                if (u.ID == gvResults.Rows[0].ID)
+                if (u.ID == gvResults.Rows[0].Cells[0].Text && u.UserType == "Student")
                 {
-                    Session["user"] = u;
+                    Session["student"] = (Students)u;
+                    break;
+                }
+                else if(u.ID == gvResults.Rows[0].Cells[0].Text && u.UserType == "Admin")
+                {
+                    Session["admin"] = (Admins)u;
+                    break;
                 }
             }
 
             if (b.ID == "btnUpdateEvent")
             {
-                
                 Response.Redirect("edit.aspx?edit=" + "events");
             }
             else if (b.ID == "btnUpdateRewards")
@@ -86,7 +96,6 @@ namespace ISSSRewards.Admin.Accounts
             else if (b.ID == "btnUpdate")
             {
                 Response.Redirect("update.aspx");
-
             }
         }
 
@@ -108,6 +117,7 @@ namespace ISSSRewards.Admin.Accounts
                         Students result = (Students)u;
                         student.Add(result);
                         AddPointsField(gvResults);
+                        FillStudentLabels(result);
                         gvResults.DataSource = student;
                         gvResults.DataBind();                      
                     }
@@ -117,7 +127,9 @@ namespace ISSSRewards.Admin.Accounts
                         studentStat.Visible = false;
                         RemovePointsField(gvResults);
                         admin = new List<Admins>();
+                        Admins result = (Admins)u;
                         admin.Add((Admins)u);
+                        FillAdminPrivileges(result);
                         gvResults.DataSource = admin;
                         gvResults.DataBind();
                     }
@@ -133,18 +145,29 @@ namespace ISSSRewards.Admin.Accounts
 
         }
 
+        private void UpdateList(List<Users> users, Users user)
+        {
+            foreach (Users u in users)
+            {
+                if (u.ID == user.ID)
+                {
+                    int index = users.IndexOf(u);
+                    users.Remove(u);
+                    users.Insert(index, user);
+                    break;
+                }
+            }
+
+            Session["list"] = users;
+        }
+
         private void FillAdminPrivileges(Admins a)
         {
             for (int i = 0; i < ckbxPrivleges.Items.Count; i++)
             {
-                if (a.Permissions[i] == true)
-                {
-                    ckbxPrivleges.Items[i].Selected = true;
-                }
-                else
-                {
-                    ckbxPrivleges.Items[i].Selected = false;
-                }
+
+                ckbxPrivleges.Items[i].Selected = a.Permissions[i];
+
             }
         }
 

@@ -17,7 +17,7 @@ namespace ISSSRewards.Admin.Accounts
         {
             if (!IsPostBack)
             {
-                Students s = (Students)Session["user"];
+                Students s = (Students)Session["student"];
                 student = new List<Students>();
                 student.Add(s);
 
@@ -97,7 +97,8 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+            Students s = (Students)Session["student"];
+            Session["user"] = (Users)s;
             Response.Redirect("view.aspx");
 
         }
@@ -142,7 +143,7 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void gvEvents_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Students s = (Students)Session["user"];
+            Students s = (Students)Session["student"];
             student = new List<Students>();
             string ID = gvEvents.Rows[e.RowIndex].Cells[0].Text;
 
@@ -159,12 +160,12 @@ namespace ISSSRewards.Admin.Accounts
             BindDDL(s, events);
             BindEventGV(student, gvEvents);
             BindStudentGV(student);
-            Session["user"] = s;
+            Session["student"] = s;
         }
 
         protected void gvRewards_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Students s = (Students)Session["user"];
+            Students s = (Students)Session["student"];
             student = new List<Students>();
             string ID = gvRewards.Rows[e.RowIndex].Cells[0].Text;
 
@@ -181,13 +182,13 @@ namespace ISSSRewards.Admin.Accounts
             BindDDL(s, rewards);
             BindRewardGV(student, gvRewards);
             BindStudentGV(student);
-            Session["user"] = s;
+            Session["student"] = s;
         }
 
         protected void btnAddSelector_Click(object sender, EventArgs e)
         {
             string edit = Request.QueryString["edit"];
-            Students s = (Students)Session["user"];
+            Students s = (Students)Session["student"];
             student = new List<Students>();
 
 
@@ -232,7 +233,7 @@ namespace ISSSRewards.Admin.Accounts
             BindDDL(s, events);
             BindEventGV(student, gvEvents);
             BindStudentGV(student);
-            Session["user"] = s;
+            Session["student"] = (Users)s;
         }
 
         private void BindRewardPage(Students s, List<Reward> rewards)
@@ -240,7 +241,7 @@ namespace ISSSRewards.Admin.Accounts
             BindDDL(s, rewards);
             BindRewardGV(student, gvRewards);
             BindStudentGV(student);
-            Session["user"] = s;
+            Session["student"] = (Users)s;
         }
     }
 }
