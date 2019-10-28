@@ -6,9 +6,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-owl mb-0">
       <a class="navbar-brand" href="#">ISSS Rewards</a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto">
             <asp:ContentPlaceHolder runat="server" ID="navLinks"></asp:ContentPlaceHolder>
-        </div>
+        </ul>
       </div>
     </nav>
     <asp:ContentPlaceHolder ID="nestedBody" runat="server"></asp:ContentPlaceHolder>
