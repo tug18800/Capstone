@@ -112,11 +112,11 @@
     <Compile Include="Admin\Accounts\edit.aspx.designer.cs">
       <DependentUpon>edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Accounts\models\Admins.cs" />
-    <Compile Include="Admin\Accounts\models\Event.cs" />
-    <Compile Include="Admin\Accounts\models\Reward.cs" />
-    <Compile Include="Admin\Accounts\models\Students.cs" />
-    <Compile Include="Admin\Accounts\models\Users.cs" />
+    <Compile Include="Admin\models\Admins.cs" />
+    <Compile Include="Admin\models\Event.cs" />
+    <Compile Include="Admin\models\Reward.cs" />
+    <Compile Include="Admin\models\Students.cs" />
+    <Compile Include="Admin\models\Users.cs" />
     <Compile Include="Admin\Accounts\update.aspx.cs">
       <DependentUpon>update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

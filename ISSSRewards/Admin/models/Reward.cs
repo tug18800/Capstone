@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ISSSRewards.Admin.Accounts.models
+namespace ISSSRewards.Admin.models
 
 {
-    public class Event
+    public class Reward
     {
         public string ID { get; set; }
         public string Title { get; set; }
         public string Date { get; set; }
         public int Points { get; set; }
 
-        public Event(string ID,string Title, string Date, int Points)
+        public Reward(string iD, string title, string date, int points)
         {
-            this.ID = ID;
-            this.Title = Title;
-            this.Date = Date;
-            this.Points = Points;
+            this.ID = iD;
+            this.Title = title;
+            this.Date = date;
+            this.Points = points;
         }
-
     }
 }
