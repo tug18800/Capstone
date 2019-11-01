@@ -135,7 +135,11 @@ namespace ISSSRewards.Admin.Events
         protected void gvEvents_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvEvents.PageIndex = e.NewPageIndex;
-            list = LoadEventList();
+            list = (List<Event>)Session["eList"];
+            if(list == null)
+            {
+                list = LoadEventList();
+            }
             BindEventGV(list);
         }
     }

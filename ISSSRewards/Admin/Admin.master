@@ -12,7 +12,7 @@
       </div>
     </nav>
     <asp:ContentPlaceHolder ID="nestedBody" runat="server"></asp:ContentPlaceHolder>
-    <footer class="fixed-bottom bg-dark" style="height: 33px;">
+    <footer class="fixed-bottom bg-dark mt-5" style="height: 33px;">
         <p class="lead footer-text text-muted text-center mt-2">&copy; Temple International Students and Services, 2019</p>
     </footer>
 </asp:Content>
