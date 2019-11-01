@@ -8,9 +8,8 @@ using ISSSRewards.Admin.models;
 
 namespace ISSSRewards.Admin.Events
 {
-    public partial class update : System.Web.UI.Page
+    public partial class view : System.Web.UI.Page
     {
-
         List<Event> list;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,11 +31,11 @@ namespace ISSSRewards.Admin.Events
                     if(ev != null)
                     {
                         lblID.Text = ev.ID;
-                        txtTitle.Text = ev.Title;
-                        txtDate.Text = Convert.ToDateTime(ev.Date).ToString("yyyy-MM-dd");
-                        txtDesc.Text += "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                        lblTitle.Text = ev.Title;
+                        lblDate.Text = ev.Date;
+                        lblDesc.Text += "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
                                         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                        txtPoints.Text += ev.Points.ToString();
+                        lblPoints.Text += ev.Points.ToString();
                     }
                     else
                     {
@@ -83,38 +82,31 @@ namespace ISSSRewards.Admin.Events
             list.Add(ev);
             return list;
         }
-        
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string id = txtID.Text;
+            Response.Redirect("view.aspx?id=" + id + "&prev=" + lblID.Text);
+        }
+
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            string urlName = Request.UrlReferrer.ToString();
-            Response.Redirect(urlName);
+            if(Request.QueryString["prev"] != null)
+            {
+                Response.Redirect("view.aspx?id=" + Request.QueryString["prev"]);
+            }
+            else
+            {
+                Response.Redirect("events.aspx");
+            }
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            list = (List<Event>)Session["eList"];
             string id = lblID.Text;
-
-            foreach (Event ev in list)
-            {
-                if (ev.ID == id)
-                {
-                    ev.Title = txtTitle.Text;
-                    ev.Date = Convert.ToDateTime(txtDate.Text).ToString("MM/dd/yyyy");
-                    ev.Points = Convert.ToInt32(txtPoints.Text);
-                    break;
-                }
-            }
-
-            Session["eList"] = list;
-
-            Response.Redirect("view.aspx?id=" + id);
+            Response.Redirect("update.aspx?id=" + id);
         }
 
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            string id = lblID.Text;
-            Response.Redirect("view.aspx?id=" + id);
-        }
+        
     }
 }

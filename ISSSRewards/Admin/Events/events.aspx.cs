@@ -23,10 +23,13 @@ namespace ISSSRewards.Admin.Events
                     Session["eList"] = list;
                     BindEventGV(list);
                 }
-
-                if(Request.QueryString["id"] != null)
+                else if(Request.QueryString["id"] != null)
                 {
                     CheckID();
+                }
+                else
+                {
+                    BindEventGV(list);
                 }
             }
             else
@@ -126,7 +129,7 @@ namespace ISSSRewards.Admin.Events
         protected void gvEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
             string ID = gvEvents.SelectedRow.Cells[0].Text;
-            Response.Redirect("update.aspx?id=" + ID);
+            Response.Redirect("view.aspx?id=" + ID);
         }
 
         protected void gvEvents_PageIndexChanging(object sender, GridViewPageEventArgs e)

@@ -33,3 +33,8 @@
 {
     background-color: #8c2132 !important;
 }
+
+.text-area-h
+{
+    min-height: 173px !important;
+}

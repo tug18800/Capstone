@@ -78,6 +78,8 @@
     <Content Include="Admin\Events\attendance.aspx" />
     <Content Include="Admin\Events\events.aspx" />
     <Content Include="Admin\Events\update.aspx" />
+    <Content Include="Admin\Events\view.aspx" />
+    <Content Include="Admin\img\img.png" />
     <Content Include="Admin\Rewards\add.aspx" />
     <Content Include="Admin\Rewards\pending.aspx" />
     <Content Include="Admin\Rewards\rewards.aspx" />
@@ -111,6 +113,13 @@
     </Compile>
     <Compile Include="Admin\Accounts\edit.aspx.designer.cs">
       <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Events\view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Events\view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\models\Admins.cs" />
     <Compile Include="Admin\models\Event.cs" />
