@@ -10,7 +10,6 @@ namespace ISSSRewards.Admin.models
         public List<Event> Events { get; set; }
         public List<Reward> Rewards { get; set; }
         public int Points { get; set; }
-        
 
         public Students(string iD, string userType, string fName, string lName) : base(iD, userType, fName, lName)
         {

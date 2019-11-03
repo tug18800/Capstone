@@ -122,6 +122,7 @@
       <DependentUpon>view.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\models\Admins.cs" />
+    <Compile Include="Admin\models\Attendance.cs" />
     <Compile Include="Admin\models\Event.cs" />
     <Compile Include="Admin\models\Reward.cs" />
     <Compile Include="Admin\models\Students.cs" />

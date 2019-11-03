@@ -82,13 +82,15 @@ namespace ISSSRewards.Admin.Accounts
         protected List<Event> LoadEventList()
         {
             List<Event> list = new List<Event>();
-            Event ev = new Event("001", "Sample Event1", "01/01/2019", 250);
+            Event ev = new Event("1", "Sample Event1", "01/01/2019", 250);
             list.Add(ev);
-            ev = new Event("002", "Sample Event2", "02/02/2019", 250);
+            ev = new Event("2", "Sample Event2", "02/02/2019", 250);
             list.Add(ev);
-            ev = new Event("003", "Sample Event3", "03/03/2019", 250);
+            ev = new Event("3", "Sample Event3", "03/03/2019", 250);
             list.Add(ev);
-            ev = new Event("004", "Sample Event4", "04/04/2019", 250);
+            ev = new Event("4", "Sample Event4", "04/04/2019", 250);
+            list.Add(ev);
+            ev = new Event("5", "Sample Event5", "05/05/2019", 250);
             list.Add(ev);
             return list;
         }
@@ -245,6 +247,11 @@ namespace ISSSRewards.Admin.Accounts
             BindRewardGV(student, gvRewards);
             BindStudentGV(student);
             Session["student"] = (Users)s;
+        }
+
+        protected void gvEvents_DataBinding(object sender, EventArgs e)
+        {
+
         }
     }
 }

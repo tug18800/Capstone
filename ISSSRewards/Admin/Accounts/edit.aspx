@@ -73,6 +73,7 @@
                         <asp:BoundField DataField="Title" HeaderText="Title" />
                         <asp:BoundField DataField="Date" HeaderText="Date" />
                         <asp:BoundField DataField="Points" HeaderText="Points" />
+                        <asp:BoundField DataField="Att" HeaderText="Attendance" />
                         <asp:CommandField ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger float-right mr-3" />
                     </Columns>
                 </asp:GridView>
