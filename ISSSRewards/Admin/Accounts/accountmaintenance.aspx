@@ -45,9 +45,9 @@
 
 <!--SEARCH FUNCTION-->
                 <div class="row mb-3">
-                    <div class="col text-right lead"><p>Enter TUID/Email</p></div>
+                    <div class="col text-right lead"><p>Enter TUID</p></div>
                     <div class="col"><asp:TextBox runat="server" ID="txtID" CssClass="form-control w-75 mx-auto"></asp:TextBox></div>
-                    <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mx-auto" Text="Search" OnClick="btnSearch_Click" /></div>
+                    <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mr-auto" Text="Search" OnClick="btnSearch_Click" /></div>
                 </div>
 
 <!--ERROR STATUS LABEL-->
@@ -55,7 +55,7 @@
                     <asp:Label ID="lblStatus" runat="server" Visible="false" CssClass="bg-error w-25 rounded px-3 py-1"></asp:Label>
                 </div>
 <!--GRIDVIEW TABLE-->
-                <asp:GridView runat="server" ID="gvResults" AutoGenerateColumns="false" GridLines="None" CssClass="table" OnSelectedIndexChanged="gvResults_SelectedIndexChanged">
+                <asp:GridView runat="server" ID="gvResults" AutoGenerateColumns="false" GridLines="None" CssClass="table table-hover" OnSelectedIndexChanged="gvResults_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField HeaderText="ID" DataField="ID" />
                         <asp:BoundField HeaderText="User Type" DataField="UserType" />
@@ -65,72 +65,18 @@
                         
                     </Columns>
                 </asp:GridView>
+
+<!--BOTTOM NAVIGATION BUTTONS-->
+                <hr class="w-75 mt-5 mx-auto" />
+                <div class="row w-100 mt-2 mb-4">
+                    <div class="col">
+                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:history.go(1);return false;"/>
+                    </div>
+                    <div class="col">
+                        <asp:Button runat="server" ID="btnAdd" Text="Update Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click"/>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-<%--<!--STUDENT TABLE-->
-                <div id="Student" runat="server" visible="false">
-                    <table class="table mb-3">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Points</th>
-                                <th scope="col"></th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">0000000001</th>
-                                <td>Student</td>
-                                <td>Spindler</td>
-                                <td>Keeth</td>
-                                <td><asp:Label runat="server" ID="lblPoints" CssClass="text-center" Text="500"></asp:Label></td>
-                                <td><asp:Button runat="server" ID="btnViewStudent" CssClass="btn btn-success float-right mr-3" Text="View" /></td>
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-<!--ADMIN TABLE-->
-                <div id="Admin" runat="server" visible="false">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">0000000002</th>
-                                <td>Admin</td>
-                                <td>Testly</td>
-                                <td>Test</td>
-                                <td><asp:Button runat="server" ID="btnViewAdmin" CssClass="btn btn-success float-right mr-3" Text="View" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>   
-    </div>--%>
-
-<!--BOTTOM NAVIGATION BUTTONS-->
-      <div class="row w-100 mt-5">
-            <div class="col">
-                <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />
-            </div>
-            <div class="col">
-                <asp:Button runat="server" ID="btnAdd" Text="Add Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click" />
-            </div>
-        </div>
 </asp:Content>

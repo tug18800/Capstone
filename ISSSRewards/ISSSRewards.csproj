@@ -78,10 +78,13 @@
     <Content Include="Admin\Events\attendance.aspx" />
     <Content Include="Admin\Events\events.aspx" />
     <Content Include="Admin\Events\update.aspx" />
+    <Content Include="Admin\Events\view.aspx" />
+    <Content Include="Admin\img\img.png" />
     <Content Include="Admin\Rewards\add.aspx" />
     <Content Include="Admin\Rewards\pending.aspx" />
     <Content Include="Admin\Rewards\rewards.aspx" />
     <Content Include="Admin\Rewards\update.aspx" />
+    <Content Include="Admin\Rewards\view.aspx" />
     <Content Include="default.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Student\css\style.css" />
@@ -112,11 +115,19 @@
     <Compile Include="Admin\Accounts\edit.aspx.designer.cs">
       <DependentUpon>edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Accounts\models\Admins.cs" />
-    <Compile Include="Admin\Accounts\models\Event.cs" />
-    <Compile Include="Admin\Accounts\models\Reward.cs" />
-    <Compile Include="Admin\Accounts\models\Students.cs" />
-    <Compile Include="Admin\Accounts\models\Users.cs" />
+    <Compile Include="Admin\Events\view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Events\view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\models\Admins.cs" />
+    <Compile Include="Admin\models\Attendance.cs" />
+    <Compile Include="Admin\models\Event.cs" />
+    <Compile Include="Admin\models\Reward.cs" />
+    <Compile Include="Admin\models\Students.cs" />
+    <Compile Include="Admin\models\Users.cs" />
     <Compile Include="Admin\Accounts\update.aspx.cs">
       <DependentUpon>update.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -200,6 +211,13 @@
     </Compile>
     <Compile Include="Admin\Rewards\update.aspx.designer.cs">
       <DependentUpon>update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Rewards\view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Rewards\view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

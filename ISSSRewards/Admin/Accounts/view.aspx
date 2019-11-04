@@ -38,7 +38,7 @@
     <div class="container">
     <p class="text-center h1 mb-3">Account Maintenance</p>  
 <!--TITLE-->
-        <div runat="server" class="card container shadow w-75">
+        <div runat="server" class="card container shadow w-75 m-bottom">
             <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">View Account</p></div>
             <hr />
             <div class="card-body mt-0">
@@ -47,9 +47,9 @@
 
 <!--SEARCH FUNCTION-->
             <div class="row my-3">
-                <div class="col text-right lead"><p>Enter TUID/Email</p></div>
+                <div class="col text-right lead"><p>Enter TUID</p></div>
                 <div class="col"><asp:TextBox runat="server" ID="txtID" CssClass="form-control w-75 mx-auto"></asp:TextBox></div>
-                <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mx-auto" Text="Search" OnClick="btnSearch_Click" /></div>
+                <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mr-auto" Text="Search" OnClick="btnSearch_Click" /></div>
             </div>
 
             <div id="cardBody" runat="server" class="card-body container">
@@ -82,7 +82,7 @@
                                         <p>Total Points Earned: </p><asp:Label runat="server" ID="lblEventPoint" Text="500"></asp:Label>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col justify-content-center">
                                     <asp:Button runat="server" ID="btnUpdateEvent" Text="Update Events" CssClass="btn text-light bg-owl d-block mx-auto" OnClick="btnUpdate_Click"/>
                                 </div>
                             </div>
@@ -116,30 +116,33 @@
 
     <!--ADMIN PRIVILAGES CHECKBOX-->
             <div id="adminPriv" runat="server">
-                <div class="w-25">
-                    <div class="ml-3">
-                        <p class="form-check-label lead">Privilages</p>
-                        <asp:CheckBoxList ID="ckbxPrivleges" Enabled="false" runat="server" CssClass="d-block mt-2">
+                <div class="row">
+                    <div class="col">
+                        <p class="h5 text-light bg-owl text-center d-block py-2">Privilages</p>
+                    </div>
+                </div>
+                <div class="row">
+                        <asp:CheckBoxList ID="ckbxPrivleges" Enabled="false" runat="server" CssClass="d-block mt-2 ml-3">
                             <asp:ListItem Value="0">Superadmin</asp:ListItem>
                             <asp:ListItem Value="1" Selected="True">Update Accounts</asp:ListItem>
                             <asp:ListItem Value="2">Events</asp:ListItem>
                             <asp:ListItem Value="3" Selected="True">Rewards</asp:ListItem>
                         </asp:CheckBoxList>
                     </div>
-                </div>
                 <div class="text-center">
                     <asp:Button runat="server" ID="btnUpdate" Text="Update Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click"/>
                 </div>
             </div>
+
+<!--BOTTOM NAVIGATION BUTTONS-->
+               <hr class="w-75 mx-auto" />
+                <div class="row w-100 mt-2 mb-4" >
+                    <div class="col">
+                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:history.go(1);return false;"/>
+                    </div>
+                    <div class="col"></div>
+                </div>
             </div>
         </div>
     </div>   
-
-<!--BOTTOM NAVIGATION BUTTONS-->
-    <div class="row w-100 mt-5 bottom">
-        <div class="col">
-            <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click"/>
-        </div>
-        <div class="col"></div>
-    </div>
 </asp:Content>

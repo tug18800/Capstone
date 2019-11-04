@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ISSSRewards.Admin.Accounts.models;
+using ISSSRewards.Admin.models;
 
 namespace ISSSRewards.Admin.Accounts
 {
@@ -17,7 +17,7 @@ namespace ISSSRewards.Admin.Accounts
         {
             if (!IsPostBack)
             {
-                Students s = (Students)Session["student"];
+                Students s = Session["student"] as Students;
                 student = new List<Students>();
                 student.Add(s);
 
@@ -82,13 +82,15 @@ namespace ISSSRewards.Admin.Accounts
         protected List<Event> LoadEventList()
         {
             List<Event> list = new List<Event>();
-            Event ev = new Event("001", "Sample Event1", "01/01/2019", 250);
+            Event ev = new Event("1", "Sample Event1", "01/01/2019", 250);
             list.Add(ev);
-            ev = new Event("002", "Sample Event2", "02/02/2019", 250);
+            ev = new Event("2", "Sample Event2", "02/02/2019", 250);
             list.Add(ev);
-            ev = new Event("003", "Sample Event3", "03/03/2019", 250);
+            ev = new Event("3", "Sample Event3", "03/03/2019", 250);
             list.Add(ev);
-            ev = new Event("004", "Sample Event4", "04/04/2019", 250);
+            ev = new Event("4", "Sample Event4", "04/04/2019", 250);
+            list.Add(ev);
+            ev = new Event("5", "Sample Event5", "05/05/2019", 250);
             list.Add(ev);
             return list;
         }
@@ -100,7 +102,7 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            Students s = (Students)Session["student"];
+            Students s = Session["student"] as Students;
             Session["user"] = (Users)s;
             Response.Redirect("view.aspx");
 
@@ -146,7 +148,7 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void gvEvents_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Students s = (Students)Session["student"];
+            Students s = Session["student"] as Students;
             student = new List<Students>();
             string ID = gvEvents.Rows[e.RowIndex].Cells[0].Text;
 
@@ -168,7 +170,7 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void gvRewards_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Students s = (Students)Session["student"];
+            Students s = Session["student"] as Students;
             student = new List<Students>();
             string ID = gvRewards.Rows[e.RowIndex].Cells[0].Text;
 
@@ -191,7 +193,7 @@ namespace ISSSRewards.Admin.Accounts
         protected void btnAddSelector_Click(object sender, EventArgs e)
         {
             string edit = Request.QueryString["edit"];
-            Students s = (Students)Session["student"];
+            Students s = Session["student"] as Students;
             student = new List<Students>();
 
 
@@ -236,7 +238,7 @@ namespace ISSSRewards.Admin.Accounts
             BindDDL(s, events);
             BindEventGV(student, gvEvents);
             BindStudentGV(student);
-            Session["student"] = (Users)s;
+            Session["student"] = s as Users;
         }
 
         private void BindRewardPage(Students s, List<Reward> rewards)
@@ -244,7 +246,12 @@ namespace ISSSRewards.Admin.Accounts
             BindDDL(s, rewards);
             BindRewardGV(student, gvRewards);
             BindStudentGV(student);
-            Session["student"] = (Users)s;
+            Session["student"] = s as Users;
+        }
+
+        protected void gvEvents_DataBinding(object sender, EventArgs e)
+        {
+
         }
     }
 }

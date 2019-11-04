@@ -8,12 +8,12 @@ using ISSSRewards.Admin.models;
 
 namespace ISSSRewards.Admin.Rewards
 {
-    public partial class update : System.Web.UI.Page
+    public partial class view : System.Web.UI.Page
     {
         List<Reward> list;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 if (Request.QueryString["id"] != null)
                 {
@@ -31,11 +31,11 @@ namespace ISSSRewards.Admin.Rewards
                     if (r != null)
                     {
                         lblID.Text = r.ID;
-                        txtTitle.Text = r.Title;
-                        txtDate.Text = Convert.ToDateTime(r.Date).ToString("yyyy-MM-dd");
-                        txtDesc.Text += "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                        lblTitle.Text = r.Title;
+                        lblDate.Text = r.Date;
+                        lblDesc.Text += "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
                                         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-                        txtPoints.Text = r.Points.ToString();
+                        lblPoints.Text += r.Points.ToString();
                     }
                     else
                     {
@@ -43,16 +43,14 @@ namespace ISSSRewards.Admin.Rewards
                         lblStatus.Text = "An Error Occurrd!";
                         lblStatus.Visible = true;
                     }
-
                 }
                 else
                 {
                     RewardSection.Visible = false;
-                    lblStatus.Text = "Please select an Reward";
+                    lblStatus.Text = "Please select a Reward";
                     lblStatus.Visible = true;
                 }
             }
-            
         }
 
         private Reward LoadReward(List<Reward> list, string id)
@@ -84,27 +82,16 @@ namespace ISSSRewards.Admin.Rewards
             return list;
         }
 
-
-        protected void btnCancel_Click(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string id = lblID.Text;
+            string id = txtID.Text;
             Response.Redirect("view.aspx?id=" + id);
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            list = (List<Reward>)Session["rList"];
             string id = lblID.Text;
-
-            Reward r = list[list.FindIndex(item => item.ID == id)];          
-            r.Title = txtTitle.Text;
-            r.Date = Convert.ToDateTime(txtDate.Text).ToString("MM/dd/yyyy");
-            r.Points = Convert.ToInt32(txtPoints.Text);
-
-            list[list.FindIndex(item => item.ID == id)] = r;
-            Session["rList"] = list;
-
-            Response.Redirect("view.aspx?id=" + id);
+            Response.Redirect("update.aspx?id=" + id);
         }
     }
 }

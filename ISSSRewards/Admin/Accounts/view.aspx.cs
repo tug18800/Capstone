@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ISSSRewards.Admin.Accounts.models;
+using ISSSRewards.Admin.models;
 
 namespace ISSSRewards.Admin.Accounts
 {
@@ -34,7 +34,7 @@ namespace ISSSRewards.Admin.Accounts
                         adminPriv.Visible = false;
                         studentStat.Visible = true;
 
-                        Students s = (Students)user;
+                        s = (Students)user;
                         FillStudentLabels(s);
                         student = new List<Students>();
                         student.Add(s);
@@ -46,7 +46,7 @@ namespace ISSSRewards.Admin.Accounts
                     {
                         adminPriv.Visible = true;
                         studentStat.Visible = false;
-                        Admins a = (Admins)user;
+                        a = (Admins)user;
                         FillAdminPrivileges(a);
                         admin = new List<Admins>();
                         admin.Add(a);

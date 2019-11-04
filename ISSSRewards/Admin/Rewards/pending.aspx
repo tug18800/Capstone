@@ -34,6 +34,54 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">/
     <div class="container">
-        <p class="text-center display-4">Pending Rewards</p>
+        <p class="text-center h1 mb-3">Rewards</p>   
+        
+<!--TITLE-->
+        <div class="card container shadow">
+            <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">Pending Rewards</p></div>
+            <hr />
+            <div class="card-body">
+
+<!--RESULTS HEADER-->
+            <div id="resultsHeader" runat="server" visible="false" class="row bg-owl text-light mt-3 mb-4">
+                <div class="col text-center"><p class="lead d-block font-weight-bold pt-2">Attendance</p></div>
+            </div>
+
+<!--ERROR STATUS LABEL-->
+            <div class="text-center">
+                <asp:Label ID="lblStatus" runat="server" Visible="false" CssClass="bg-success w-25 rounded px-3 py-1 text-light"></asp:Label>
+            </div>
+<!--GRIDVIEW TABLE-->
+            <asp:GridView runat="server" ID="gvRewards" CssClass="table table-hover" AllowPaging="true" PageIndex="0" AutoGenerateColumns="false" GridLines="None" OnRowDeleting="gvRewards_RowDeleting"
+                OnSelectedIndexChanged="gvRewards_SelectedIndexChanged" PageSize="5" OnPageIndexChanging="gvRewards_PageIndexChanging">
+                <Columns>
+                    <asp:BoundField DataField="ID" HeaderText="ID"/>
+                    <asp:BoundField DataField="FName" HeaderText="First Name" />
+                    <asp:BoundField DataField="LName" HeaderText="Last Name" />
+                    <asp:BoundField DataField="Reward" HeaderText="Reward Title" />
+                    <asp:BoundField DataField="Points" HeaderText="Points" />
+                    <asp:BoundField DataField="Qty" HeaderText="Quantity" />
+                    <asp:CommandField ShowSelectButton="true" SelectText="Approve">
+                    <ControlStyle CssClass="btn btn-success d-block mx-auto"></ControlStyle>
+                    </asp:CommandField>    
+                    <asp:CommandField ShowDeleteButton="true" DeleteText="Deny">
+                        <ControlStyle CssClass="btn btn-danger d-block mx-auto"></ControlStyle>
+                    </asp:CommandField>
+                </Columns>
+                <PagerSettings FirstPageText="First" LastPageText="Last" Mode="Numeric" PageButtonCount="3" Visible="true" />
+                <PagerStyle HorizontalAlign="Center" />
+            </asp:GridView>
+
+<!--BOTTOM NAVIGATION BUTTONS-->
+            <hr class="mt-3 w-75 mx-auto mt-5" />
+            <div class="row w-100 mb-4">
+                <div class="col">
+                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:history.go(1);return false;" />
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 </asp:Content>

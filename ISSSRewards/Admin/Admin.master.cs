@@ -14,14 +14,10 @@ namespace ISSSRewards.Admin
 
         }
 
-        public class X
+        public void AdminTest()
         {
-            string x = "test";
 
-            public X(string x)
-            {
-                this.x = x;
-            }
         }
+
     }
 }
