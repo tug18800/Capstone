@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ISSSRewards.Admin.Accounts.models
+namespace ISSSRewards.Admin.models
 {
     public class Students : Users
     {
         public List<Event> Events { get; set; }
         public List<Reward> Rewards { get; set; }
         public int Points { get; set; }
-        
 
         public Students(string iD, string userType, string fName, string lName) : base(iD, userType, fName, lName)
         {

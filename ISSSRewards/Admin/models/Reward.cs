@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ISSSRewards.Admin.Accounts.models
+namespace ISSSRewards.Admin.models
 
 {
+
     public class Reward
     {
         public string ID { get; set; }

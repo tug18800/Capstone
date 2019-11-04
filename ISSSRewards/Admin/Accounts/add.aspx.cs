@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ISSSRewards.Admin.Accounts.models;
+using ISSSRewards.Admin.models;
 
 
 namespace ISSSRewards.Admin.Accounts
