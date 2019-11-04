@@ -45,8 +45,24 @@ namespace ISSSRewards.Admin.Rewards
             dr["Reward"] = "$15 Chipotle Gift Card";
             dr["Points"] = "250";
             dr["Qty"] = "1";
+            dt.Rows.Add(dr);
 
+            dr = dt.NewRow();
+            dr["ID"] = "0000000001";
+            dr["LName"] = "Testly";
+            dr["FName"] = "Test";
+            dr["Reward"] = "Temple T-Shirt";
+            dr["Points"] = "300";
+            dr["Qty"] = "1";
+            dt.Rows.Add(dr);
 
+            dr = dt.NewRow();
+            dr["ID"] = "0000000001";
+            dr["LName"] = "Testly";
+            dr["FName"] = "Test";
+            dr["Reward"] = "Temple Shades";
+            dr["Points"] = "150";
+            dr["Qty"] = "1";
             dt.Rows.Add(dr);
         }
 

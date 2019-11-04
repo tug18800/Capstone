@@ -63,7 +63,7 @@
                             <asp:ListItem Selected="True" Text="--Select--"></asp:ListItem>
                         </asp:DropDownList>
                     </div>
-                    <div class="col-4"><asp:Button runat="server" ID="btnAddSelector" CssClass="btn btn-success d-block float-right mr-4" Text="Add" OnClick="btnAddSelector_Click" /></div>
+                    <div class="col-4"><asp:Button runat="server" ID="btnAddSelector" CssClass="btn btn-success d-block mx-auto" Text="Add" OnClick="btnAddSelector_Click" /></div>
                 </div>
             
 <!--EVENTS GRIDVIEW-->
@@ -73,8 +73,7 @@
                         <asp:BoundField DataField="Title" HeaderText="Title" />
                         <asp:BoundField DataField="Date" HeaderText="Date" />
                         <asp:BoundField DataField="Points" HeaderText="Points" />
-                        <asp:BoundField DataField="Att" HeaderText="Attendance" />
-                        <asp:CommandField ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger float-right mr-3" />
+                        <asp:CommandField ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger mx-auto" />
                     </Columns>
                 </asp:GridView>
 
@@ -88,16 +87,17 @@
                         <asp:CommandField ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger float-right mr-3" />
                     </Columns>
                 </asp:GridView>
-            </div>
-        </div>
 
 <!--BOTTOM NAVIGATION BUTTONS-->
-      <div class="row w-100 mt-5 bottom">
-            <div class="col">
-                <asp:Button runat="server" ID="btnCancel" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click"/>
-            </div>
-            <div class="col">
-                <asp:Button runat="server" ID="btnUpdate" Text="Update Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click"/>
+            <hr class="w-75 mt-5 mx-auto" />
+            <div class="row w-100 mt-2 mb-4" >
+                <div class="col">
+                    <asp:Button runat="server" ID="btnCancel" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click"/>
+                </div>
+                <div class="col">
+                    <asp:Button runat="server" ID="btnUpdate" Text="Update Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click"/>
+                </div>
             </div>
         </div>
+    </div>
 </asp:Content>

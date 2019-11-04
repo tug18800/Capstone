@@ -45,9 +45,9 @@
 
 <!--SEARCH FUNCTION-->
                 <div class="row mb-3">
-                    <div class="col text-right lead"><p>Enter TUID/Email</p></div>
+                    <div class="col text-right lead"><p>Enter TUID</p></div>
                     <div class="col"><asp:TextBox runat="server" ID="txtID" CssClass="form-control w-75 mx-auto"></asp:TextBox></div>
-                    <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mx-auto" Text="Search" OnClick="btnSearch_Click" /></div>
+                    <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mr-auto" Text="Search" OnClick="btnSearch_Click" /></div>
                 </div>
 
 <!--ERROR STATUS LABEL-->
@@ -55,7 +55,7 @@
                     <asp:Label ID="lblStatus" runat="server" Visible="false" CssClass="bg-error w-25 rounded px-3 py-1"></asp:Label>
                 </div>
 <!--GRIDVIEW TABLE-->
-                <asp:GridView runat="server" ID="gvResults" AutoGenerateColumns="false" GridLines="None" CssClass="table" OnSelectedIndexChanged="gvResults_SelectedIndexChanged">
+                <asp:GridView runat="server" ID="gvResults" AutoGenerateColumns="false" GridLines="None" CssClass="table table-hover" OnSelectedIndexChanged="gvResults_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField HeaderText="ID" DataField="ID" />
                         <asp:BoundField HeaderText="User Type" DataField="UserType" />
@@ -65,15 +65,18 @@
                         
                     </Columns>
                 </asp:GridView>
+
+<!--BOTTOM NAVIGATION BUTTONS-->
+                <hr class="w-75 mt-5 mx-auto" />
+                <div class="row w-100 mt-2 mb-4">
+                    <div class="col">
+                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click"/>
+                    </div>
+                    <div class="col">
+                        <asp:Button runat="server" ID="btnAdd" Text="Update Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click"/>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row w-100 mt-5">
-            <div class="col">
-                <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />
-            </div>
-            <div class="col">
-                <asp:Button runat="server" ID="btnAdd" Text="Add Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click" />
-            </div>
-        </div>
 </asp:Content>

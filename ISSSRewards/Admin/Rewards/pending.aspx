@@ -56,8 +56,8 @@
                 OnSelectedIndexChanged="gvRewards_SelectedIndexChanged" PageSize="5" OnPageIndexChanging="gvRewards_PageIndexChanging">
                 <Columns>
                     <asp:BoundField DataField="ID" HeaderText="ID"/>
-                    <asp:BoundField DataField="FName" HeaderText="Last Name" />
-                    <asp:BoundField DataField="LName" HeaderText="First Name" />
+                    <asp:BoundField DataField="FName" HeaderText="First Name" />
+                    <asp:BoundField DataField="LName" HeaderText="Last Name" />
                     <asp:BoundField DataField="Reward" HeaderText="Reward Title" />
                     <asp:BoundField DataField="Points" HeaderText="Points" />
                     <asp:BoundField DataField="Qty" HeaderText="Quantity" />
@@ -83,4 +83,5 @@
             </div>
         </div>
     </div>
+</div>
 </asp:Content>
