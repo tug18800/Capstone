@@ -88,7 +88,7 @@
 <!--BOTTOM NAVIGATION BUTTONS-->
                 <div class="row w-100 mt-5 mb-4">
                     <div class="col">
-                        <asp:Button runat="server" ID="btnCancel" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click" />
+                        <asp:Button runat="server" ID="btnCancel" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:history.go(1);return false;" />
                     </div>
                     <div class="col">
                         <asp:Button runat="server" ID="btnAdd" Text="Add Event" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click" />

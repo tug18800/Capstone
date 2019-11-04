@@ -62,7 +62,7 @@
                 <hr class="w-75 mt-5 mx-auto" />
                 <div class="row w-100 mt-2 mb-4" >
                     <div class="col">
-                        <asp:Button runat="server" ID="Button1" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />
+                        <asp:Button runat="server" ID="btnCancel" Text="Cancel" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:.go(1);return false;" />
                     </div>
                     <div class="col">
                         <asp:Button runat="server" ID="Button2" Text="Add Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click" />
