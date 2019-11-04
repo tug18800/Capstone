@@ -84,6 +84,7 @@
     <Content Include="Admin\Rewards\pending.aspx" />
     <Content Include="Admin\Rewards\rewards.aspx" />
     <Content Include="Admin\Rewards\update.aspx" />
+    <Content Include="Admin\Rewards\view.aspx" />
     <Content Include="default.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Student\css\style.css" />
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="Admin\Rewards\update.aspx.designer.cs">
       <DependentUpon>update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Rewards\view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Rewards\view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

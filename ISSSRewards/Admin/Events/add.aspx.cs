@@ -28,7 +28,16 @@ namespace ISSSRewards.Admin.Events
                 LoadEventList();
             }
 
-            string id = (Convert.ToInt32(list[list.Count-1].ID)+1).ToString();
+            string id = "0";
+            if(list.Count > 0)
+            {
+                id = (Convert.ToInt32(list[list.Count - 1].ID) + 1).ToString();
+            }
+            else
+            {
+                id = "1";
+            }
+
 
             string title = txtTitle.Text;
             string date = Convert.ToDateTime(txtDate.Text).ToString("MM/dd/yyyy");

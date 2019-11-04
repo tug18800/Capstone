@@ -105,8 +105,6 @@ namespace ISSSRewards.Admin.Events
         {
             string id = lblID.Text;
             Response.Redirect("update.aspx?id=" + id);
-        }
-
-        
+        }      
     }
 }

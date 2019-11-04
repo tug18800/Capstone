@@ -6,6 +6,7 @@ using System.Web;
 namespace ISSSRewards.Admin.models
 
 {
+
     public class Reward
     {
         public string ID { get; set; }

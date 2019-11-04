@@ -83,12 +83,6 @@ namespace ISSSRewards.Admin.Events
             list.Add(ev);
             return list;
         }
-        
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            string urlName = Request.UrlReferrer.ToString();
-            Response.Redirect(urlName);
-        }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {

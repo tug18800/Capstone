@@ -32,11 +32,6 @@ namespace ISSSRewards.Admin.Events
                     BindEventGV(list);
                 }
             }
-            else
-            
-            {
-                // Stub
-            }
         }
 
         //Simulates Converted Dataset from DB
@@ -95,8 +90,14 @@ namespace ISSSRewards.Admin.Events
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            string urlName = Request.UrlReferrer.ToString();
-            Response.Redirect(urlName);
+            if(string.IsNullOrEmpty(Request.QueryString["id"]))
+            {
+                Response.Redirect("dashboard.aspx");
+            }
+            else
+            {
+                Response.Redirect("dashboard.aspx");
+            }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
