@@ -6,6 +6,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
     <div class="container">
         <p class="text-center display-4">Home</p>
+            <hr />
+            <div class="row">
+  <div class="col-sm-12">
+    <div class="text-center"> 
+        <p class="text-center display-6">Current Points</p>
+        <asp:TextBox ID="StudentPoints" runat="server"></asp:TextBox>
+        </div>
+      </div>
+                </div>
+        <hr />
          <div class="row">
   <div class="col-sm-12">
     <div class="text-center"> 
