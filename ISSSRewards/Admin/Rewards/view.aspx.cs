@@ -93,5 +93,10 @@ namespace ISSSRewards.Admin.Rewards
             string id = lblID.Text;
             Response.Redirect("update.aspx?id=" + id);
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

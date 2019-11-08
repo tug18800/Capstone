@@ -87,10 +87,16 @@
     <Content Include="Admin\Rewards\view.aspx" />
     <Content Include="default.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="Student\confirm.aspx" />
     <Content Include="Student\css\style.css" />
     <Content Include="Student\events.aspx" />
     <Content Include="Student\home.aspx" />
+    <Content Include="Student\img\chipotle.png" />
+    <Content Include="Student\img\img.png" />
+    <Content Include="Student\img\temple t-shirt.jpg" />
+    <Content Include="Student\img\temple wb.jpg" />
     <Content Include="Student\rewards.aspx" />
+    <Content Include="Student\view.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +247,13 @@
       <DependentUpon>master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student\confirm.aspx.cs">
+      <DependentUpon>confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\confirm.aspx.designer.cs">
+      <DependentUpon>confirm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student\events.aspx.cs">
       <DependentUpon>events.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,6 +268,10 @@
     <Compile Include="Student\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Student\models\Event.cs" />
+    <Compile Include="Student\models\Reward.cs" />
+    <Compile Include="Student\models\Students.cs" />
+    <Compile Include="Student\models\Users.cs" />
     <Compile Include="Student\rewards.aspx.cs">
       <DependentUpon>rewards.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,6 +285,13 @@
     </Compile>
     <Compile Include="Student\Student.master.designer.cs">
       <DependentUpon>Student.master</DependentUpon>
+    </Compile>
+    <Compile Include="Student\view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -78,10 +78,10 @@
                     </div>
                 </div>
 
-<!--BOTTOM NAVIGATION BUTTONS-->
+<!--CONFIRMATION BUTTONS-->
                 <div class="row w-100 mt-5">
                     <div class="col">
-                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:history.go(1);return false;" />
+                        <asp:Button runat="server" ID="btnCancel" Text="Canel" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click" />
                     </div>
                     <div class="col">
                         <asp:Button runat="server" ID="btnUpdate" Text="Update Reward" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click" />
