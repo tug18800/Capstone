@@ -91,13 +91,14 @@ namespace ISSSRewards.Admin.Events
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            if(Request.QueryString["prev"] != null)
+            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
             {
-                Response.Redirect("view.aspx?id=" + Request.QueryString["prev"]);
+                Response.Redirect("events.aspx");
             }
             else
             {
-                Response.Redirect("events.aspx");
+                Session["Prev"] = Request.UrlReferrer.ToString();
+                Response.Redirect(Request.QueryString["Prev"]);
             }
         }
 

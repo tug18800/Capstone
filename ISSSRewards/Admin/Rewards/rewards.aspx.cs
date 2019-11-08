@@ -82,6 +82,7 @@ namespace ISSSRewards.Admin.Rewards
         {
             lblStatus.Visible = false;
             string id = txtID.Text;
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("rewards.aspx?id=" + id);
         }
 
@@ -112,6 +113,7 @@ namespace ISSSRewards.Admin.Rewards
         protected void gvRewards_SelectedIndexChanged(object sender, EventArgs e)
         {
             string ID = gvRewards.SelectedRow.Cells[0].Text;
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("view.aspx?id=" + ID);
         }
 
@@ -128,7 +130,21 @@ namespace ISSSRewards.Admin.Rewards
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("add.aspx");
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            {
+                Response.Redirect("../dashboard.aspx");
+            }
+            else
+            {
+                Session["Prev"] = Request.UrlReferrer.ToString();
+                Response.Redirect(Request.QueryString["Prev"]);
+            }
         }
     }
 }

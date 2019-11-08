@@ -38,7 +38,7 @@
         
 <!--TITLE-->
         <div class="card container shadow">
-            <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">Search Reards</p></div>
+            <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">Search Rewards</p></div>
             <hr />
             <div class="card-body">
 
@@ -78,7 +78,7 @@
             <hr class="mt-3 w-75 mx-auto" />
             <div class="row w-100 mb-4">
                 <div class="col">
-                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:history.go(1);return false;" />
+                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />
                 </div>
                 <div class="col">
                     <asp:Button runat="server" ID="btnAdd" Text="Add Reward" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click" />

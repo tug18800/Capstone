@@ -39,7 +39,7 @@
         
 <!--TITLE-->
         <div class="card container shadow">
-            <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">View Account</p></div>
+            <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">View Event</p></div>
             <hr />
             <div class="card-body">
 
@@ -60,7 +60,7 @@
                 <asp:Label runat="server" CssClass="lead d-block bg-owl text-light text-center" ID="lblTitle"></asp:Label>
                 <div id="EventSection" class="row" runat="server">
 <!--PICTURE COL-->                
-                    <div class="col-4 mt-4"><img src="../img/img.png" class="img-thumbnail" /></div>
+                    <div class="col-4 mt-4"><img src="../img/img.png" class="result-img" /></div>
 
 <!--DATE/DESC COL-->
                     <div class="col-5 mt-4 pl-5">

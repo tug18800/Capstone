@@ -26,6 +26,7 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("view.aspx");
         }
 
@@ -34,6 +35,7 @@ namespace ISSSRewards.Admin.Accounts
             Admins a = (Admins)Session["Admin"];
             UpdatePrivilages(a);
             Session["user"] = (Users)a;
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("view.aspx");
         }
 

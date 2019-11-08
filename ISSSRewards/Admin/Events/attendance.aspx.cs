@@ -191,7 +191,15 @@ namespace ISSSRewards.Admin.Events
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("events.aspx");
+            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            {
+                Response.Redirect("events.aspx");
+            }
+            else
+            {
+                Session["Prev"] = Request.UrlReferrer.ToString();
+                Response.Redirect(Request.QueryString["Prev"]);
+            }
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)

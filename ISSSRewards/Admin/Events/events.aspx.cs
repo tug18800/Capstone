@@ -85,23 +85,26 @@ namespace ISSSRewards.Admin.Events
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             string id = txtID.Text;
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("events.aspx?id=" + id);
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(Request.QueryString["id"]))
+            if(string.IsNullOrEmpty(Request.QueryString["Prev"]))
             {
-                Response.Redirect("dashboard.aspx");
+                Response.Redirect("../dashboard.aspx");
             }
             else
             {
-                Response.Redirect("dashboard.aspx");
+                Session["Prev"] = Request.UrlReferrer.ToString();
+                Response.Redirect(Request.QueryString["Prev"]);
             }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("add.aspx");
         }
         protected void btnAll_Click(object sender, EventArgs e)
@@ -130,6 +133,7 @@ namespace ISSSRewards.Admin.Events
         protected void gvEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
             string ID = gvEvents.SelectedRow.Cells[0].Text;
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("view.aspx?id=" + ID);
         }
 

@@ -92,6 +92,7 @@ namespace ISSSRewards.Admin.Accounts
                 }
             }
 
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("accountmaintenance.aspx");
         }
 
@@ -104,9 +105,10 @@ namespace ISSSRewards.Admin.Accounts
             }
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
+        protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("accountmaintanence.aspx");
+            Session["Prev"] = Request.UrlReferrer.ToString();
+            Response.Redirect("accountmaintenance.aspx");
         }
     }
 }

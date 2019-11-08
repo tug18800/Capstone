@@ -34,7 +34,7 @@
       </li>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
-    <div class="container">
+    <div class="container m-bottom">
         <p class="text-center h1 mb-3">Events</p>   
         
 <!--TITLE-->
@@ -53,7 +53,7 @@
                 <div class="bg-owl py-2"><asp:TextBox runat="server" CssClass="d-block mx-auto form-control text-center w-50" ID="txtTitle"></asp:TextBox></div>
                 <div id="EventSection" class="row" runat="server">
 <!--PICTURE COL-->                
-                    <div class="col-4 mt-4"><img src="../img/img.png" class="img-thumbnail" /></div>
+                    <div class="col-4 mt-4"><img src="../img/img.png" class="result-img" /></div>
 
 <!--DATE/DESC COL-->
                     <div class="col-5 mt-4 pl-5">

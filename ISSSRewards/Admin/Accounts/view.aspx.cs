@@ -63,7 +63,15 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("accountmaintenance.aspx");
+            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            {
+                Response.Redirect("accountmaintenance.aspx");
+            }
+            else
+            {
+                Session["Prev"] = Request.UrlReferrer.ToString();
+                Response.Redirect(Request.QueryString["Prev"]);
+            }
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -86,15 +94,18 @@ namespace ISSSRewards.Admin.Accounts
 
             if (b.ID == "btnUpdateEvent")
             {
+                Session["Prev"] = Request.UrlReferrer.ToString();
                 Response.Redirect("edit.aspx?edit=" + "events");
             }
             else if (b.ID == "btnUpdateRewards")
             {
+                Session["Prev"] = Request.UrlReferrer.ToString();
                 Response.Redirect("edit.aspx?edit=" + "rewards");
 
             }
             else if (b.ID == "btnUpdate")
             {
+                Session["Prev"] = Request.UrlReferrer.ToString();
                 Response.Redirect("update.aspx");
             }
         }

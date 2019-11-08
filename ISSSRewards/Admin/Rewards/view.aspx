@@ -81,7 +81,7 @@
 <!--CONFIRMATION BUTTONS-->
                 <div class="row w-100 mt-5">
                     <div class="col">
-                        <asp:Button runat="server" ID="btnCancel" Text="Canel" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click" />
+                        <asp:Button runat="server" ID="Back" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />
                     </div>
                     <div class="col">
                         <asp:Button runat="server" ID="btnUpdate" Text="Update Reward" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click" />

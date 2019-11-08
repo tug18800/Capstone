@@ -58,13 +58,13 @@ namespace ISSSRewards.Admin.Accounts {
         protected global::System.Web.UI.WebControls.CheckBoxList ckbxPrivleges;
         
         /// <summary>
-        /// btnBack control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBack;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
         /// btnAdd control.
