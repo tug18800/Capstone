@@ -6,6 +6,8 @@
 
 <asp:Content runat="server" ID="ContentNavLinks" ContentPlaceHolderID="navLinks">
   <li class="nav-item"><a class="nav-link" href="../dashboard.aspx">Dashboard</a></li>
+  <li class="nav-item"><a class="nav-link" href="../Emails/email.aspx">Emails</a></li>
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
@@ -42,7 +44,7 @@
         <div runat="server" class="card container shadow w-75">
             <div class="card-title my-3 text-center">
                 <asp:Label ID="lblTitle" runat="server" CssClass="lead text-large"></asp:Label>
-            </div>
+            </div>zz
 
 <!--STUDENT TABLE-->
            <asp:GridView runat="server" ID="gvStudent" GridLines="None" AutoGenerateColumns="false" CssClass="table">

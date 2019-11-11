@@ -5,6 +5,8 @@
 </asp:Content>
 <asp:Content runat="server" ID="ContentNavLinks" ContentPlaceHolderID="navLinks">
   <li class="nav-item"><a class="nav-link" href="../dashboard.aspx">Dashboard</a></li>
+  <li class="nav-item"><a class="nav-link" href="../Emails/email.aspx">Emails</a></li>
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
@@ -34,6 +36,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
     <div class="container">
+        <p class="text-center h1 mb-3">Account Maintenance</p>   
         
         <div class="card container shadow w-75">
             <div class="card-title mb-0"><p class="text-center display-4">Add Account</p></div>
@@ -43,6 +46,11 @@
                     <div class="col text-right lead"><p>Enter TUID/Email</p></div>
                     <div class="col"><asp:TextBox runat="server" ID="txtID" CssClass="form-control w-75 mx-auto"></asp:TextBox></div>
                     <div class="col"><asp:Button runat="server" ID="btnSearch" CssClass="btn bg-owl text-light d-block mx-auto" Text="Search" OnClick="btnSearch_Click" /></div>
+                </div>
+
+                <!--CONFIRMATION ROW-->
+                <div class="row mb-3" runat="server" id="divConfirm" visible="false">
+                    <div class="col text-center lead"><p>Are you sure you would like to add this account?</p></div>
                 </div>
 
                 <asp:GridView runat="server" ID="gvAccount" GridLines="None" AutoGenerateColumns="false" CssClass="table">
@@ -68,10 +76,14 @@
                 <hr class="w-75 mt-5 mx-auto" />
                 <div class="row w-100 mt-2 mb-4" >
                     <div class="col">
-                        <asp:Button runat="server" ID="btnCancel" Text="Cancel" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click" />
+                        <asp:Button runat="server" ID="btnCancel" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click" />
+                        <asp:Button runat="server" ID="btnCancel1" Text="Cancel" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel1_Click" Visible="false"/>
+
                     </div>
                     <div class="col">
                         <asp:Button runat="server" ID="btnAdd" Text="Add Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click"/>
+                        <asp:Button runat="server" ID="btnConfirm" Text="Confirm" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnConfirm_Click" Visible="false"/>
+
                     </div>
                 </div>
             </div>

@@ -5,6 +5,8 @@
 </asp:Content>
 <asp:Content runat="server" ID="ContentNavLinks" ContentPlaceHolderID="navLinks">
   <li class="nav-item"><a class="nav-link" href="../dashboard.aspx">Dashboard</a></li>
+  <li class="nav-item"><a class="nav-link" href="../Emails/email.aspx">Emails</a></li>
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
@@ -73,7 +75,7 @@
                         <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click"/>
                     </div>
                     <div class="col">
-                        <asp:Button runat="server" ID="btnAdd" Text="Update Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click"/>
+                        <asp:Button runat="server" ID="btnAdd" Text="Add Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnAdd_Click"/>
                     </div>
                 </div>
             </div>

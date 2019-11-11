@@ -31,6 +31,15 @@ namespace ISSSRewards.Admin.Accounts {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
+        /// divConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divConfirm;
+        
+        /// <summary>
         /// gvAccount control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace ISSSRewards.Admin.Accounts {
         protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
+        /// btnCancel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel1;
+        
+        /// <summary>
         /// btnAdd control.
         /// </summary>
         /// <remarks>
@@ -74,5 +92,14 @@ namespace ISSSRewards.Admin.Accounts {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdd;
+        
+        /// <summary>
+        /// btnConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirm;
     }
 }

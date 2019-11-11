@@ -74,6 +74,9 @@
     <Content Include="Admin\Accounts\view.aspx" />
     <Content Include="Admin\css\style.css" />
     <Content Include="Admin\dashboard.aspx" />
+    <Content Include="Admin\Emails\edit.aspx" />
+    <Content Include="Admin\Emails\email.aspx" />
+    <Content Include="Admin\Emails\view.aspx" />
     <Content Include="Admin\Events\add.aspx" />
     <Content Include="Admin\Events\attendance.aspx" />
     <Content Include="Admin\Events\events.aspx" />
@@ -121,6 +124,27 @@
     <Compile Include="Admin\Accounts\edit.aspx.designer.cs">
       <DependentUpon>edit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Emails\edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Emails\edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Emails\email.aspx.cs">
+      <DependentUpon>email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Emails\email.aspx.designer.cs">
+      <DependentUpon>email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Emails\view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Emails\view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Events\view.aspx.cs">
       <DependentUpon>view.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,6 +154,7 @@
     </Compile>
     <Compile Include="Admin\models\Admins.cs" />
     <Compile Include="Admin\models\Attendance.cs" />
+    <Compile Include="Admin\models\Email.cs" />
     <Compile Include="Admin\models\Event.cs" />
     <Compile Include="Admin\models\Reward.cs" />
     <Compile Include="Admin\models\Students.cs" />

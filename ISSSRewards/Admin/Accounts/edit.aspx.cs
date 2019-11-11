@@ -253,10 +253,6 @@ namespace ISSSRewards.Admin.Accounts
             Session["student"] = s as Users;
         }
 
-        protected void gvEvents_DataBinding(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

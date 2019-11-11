@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="text-center bg-owl text-light py-2 rounded"> 
-                        <p class="text-center h5">Upcoming Events</p>
+                        <p class="text-center h5">Recently Added Rewards</p>
                         </div>
                         <asp:GridView ID="gvRewards" runat="server" AutoGenerateColumns="false" GridLines="None" CssClass="table my-0" OnSelectedIndexChanged="gvRewards_SelectedIndexChanged">
                             <Columns>

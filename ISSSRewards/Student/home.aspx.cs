@@ -41,8 +41,8 @@ namespace ISSSRewards.Student
         private Students LoadStudent()
         {
             Students s = new Students("0000000001", "Student", "Test", "Testly");
-            s.Events.Add(new Event("1", "Sample Event1", "12/01/2019", "This is Sample Event 1's description", "img/img.png", 10000, "11/7/2019"));
-            s.Events.Add(new Event("3", "Sample Event3", "12/20/2019", "This is Sample Event 3's description", "img/img.png", 400, "11/7/2019"));
+            s.Events.Add(new Event("1", "Sample Event1", "12/01/2019", "This is Sample Event 1's description", "img/img.png", 500, "11/7/2019"));
+            s.Events.Add(new Event("3", "Sample Event3", "12/20/2019", "This is Sample Event 3's description", "img/img.png", 500, "11/7/2019"));
             return s;
         }
 

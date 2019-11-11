@@ -6,6 +6,8 @@
 
 <asp:Content runat="server" ID="ContentNavLinks" ContentPlaceHolderID="navLinks">
   <li class="nav-item"><a class="nav-link" href="../dashboard.aspx">Dashboard</a></li>
+  <li class="nav-item"><a class="nav-link" href="../Emails/email.aspx">Emails</a></li>
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
@@ -36,10 +38,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
     <div class="container">
-    <p class="text-center h1 mb-3">Account Maintenance</p>  
+    <p class="text-center h1 mb-3">Emails</p>  
 <!--TITLE-->
         <div runat="server" class="card container shadow w-75 m-bottom">
-            <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">View Account</p></div>
+            <div class="card-title mt-3 mb-0"><p class="lead text-center text-large">Edit Email</p></div>
             <hr />
             <div class="card-body mt-0">
 <!--ERROR STATUS LABEL-->
