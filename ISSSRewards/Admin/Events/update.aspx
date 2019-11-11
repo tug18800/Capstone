@@ -6,35 +6,36 @@
 </asp:Content>
 <asp:Content runat="server" ID="ContentNavLinks" ContentPlaceHolderID="navLinks">
   <li class="nav-item"><a class="nav-link" href="../dashboard.aspx">Dashboard</a></li>
+  <li class="nav-item"><a class="nav-link" href="../Emails/email.aspx">Emails</a></li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-light" href="add.aspx">Add Event</a>
-            <a class="dropdown-item text-light" href="attendance.aspx">Event Attendence</a>
             <a class="dropdown-item text-light" href="events.aspx">View Events</a>
+            <a class="dropdown-item text-light" href="attendance.aspx">Event Attendence</a>
             <a class="dropdown-item text-light" href="update.aspx">Update Event</a>
+            <a class="dropdown-item text-light" href="add.aspx">Add Event</a>
         </div>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rewards</a>
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-light" href="../Rewards/add.aspx">Add Reward</a>
-            <a class="dropdown-item text-light" href="../Rewards/pending.aspx">View Pending Rewards</a>
             <a class="dropdown-item text-light" href="../Rewards/rewards.aspx">View Rewards</a>
+            <a class="dropdown-item text-light" href="../Rewards/pending.aspx">View Pending Rewards</a>
             <a class="dropdown-item text-light" href="../Rewards/update.aspx">Update Reward</a>
+            <a class="dropdown-item text-light" href="../Rewards/add.aspx">Add Reward</a>
         </div>
       </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account Maintenance</a>
         <div class="dropdown-menu subNavLinks bg-danger" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-light" href="../Accounts/add.aspx">Add Account</a>
             <a class="dropdown-item text-light" href="../Accounts/accountmaintenance.aspx">View Account</a>
             <a class="dropdown-item text-light" href="../Accounts/update.aspx">Update Account</a>
+            <a class="dropdown-item text-light" href="../Accounts/add.aspx">Add Account</a>
         </div>
       </li>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">/
-    <div class="container">
+<asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
+    <div class="container m-bottom">
         <p class="text-center h1 mb-3">Events</p>   
         
 <!--TITLE-->
@@ -53,7 +54,7 @@
                 <div class="bg-owl py-2"><asp:TextBox runat="server" CssClass="d-block mx-auto form-control text-center w-50" ID="txtTitle"></asp:TextBox></div>
                 <div id="EventSection" class="row" runat="server">
 <!--PICTURE COL-->                
-                    <div class="col-4 mt-4"><img src="../img/img.png" class="img-thumbnail" /></div>
+                    <div class="col-4 mt-4"><img src="../img/img.png" class="result-img" /></div>
 
 <!--DATE/DESC COL-->
                     <div class="col-5 mt-4 pl-5">

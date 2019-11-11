@@ -7,11 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ISSSRewards.Student
-{
-
-
-    public partial class dashboard
-    {
+namespace ISSSRewards.Student {
+    
+    
+    public partial class home {
+        
+        /// <summary>
+        /// lblPoints control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPoints;
+        
+        /// <summary>
+        /// gvEvents control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvEvents;
+        
+        /// <summary>
+        /// gvRewards control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvRewards;
     }
 }

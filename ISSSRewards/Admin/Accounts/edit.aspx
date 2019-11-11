@@ -6,30 +6,32 @@
 
 <asp:Content runat="server" ID="ContentNavLinks" ContentPlaceHolderID="navLinks">
   <li class="nav-item"><a class="nav-link" href="../dashboard.aspx">Dashboard</a></li>
+  <li class="nav-item"><a class="nav-link" href="../Emails/email.aspx">Emails</a></li>
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-light" href="../Events/add.aspx">Add Event</a>
-            <a class="dropdown-item text-light" href="../Events/attendance.aspx">Event Attendence</a>
             <a class="dropdown-item text-light" href="../Events/events.aspx">View Events</a>
+            <a class="dropdown-item text-light" href="../Events/attendance.aspx">Event Attendence</a>
             <a class="dropdown-item text-light" href="../Events/update.aspx">Update Event</a>
+            <a class="dropdown-item text-light" href="../Events/add.aspx">Add Event</a>
         </div>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rewards</a>
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-light" href="../Rewards/add.aspx">Add Reward</a>
-            <a class="dropdown-item text-light" href="../Rewards/pending.aspx">View Pending Rewards</a>
             <a class="dropdown-item text-light" href="../Rewards/rewards.aspx">View Rewards</a>
+            <a class="dropdown-item text-light" href="../Rewards/pending.aspx">View Pending Rewards</a>
             <a class="dropdown-item text-light" href="../Rewards/update.aspx">Update Reward</a>
+            <a class="dropdown-item text-light" href="../Rewards/add.aspx">Add Reward</a>
         </div>
       </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account Maintenance</a>
         <div class="dropdown-menu subNavLinks bg-danger" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-light" href="add.aspx">Add Account</a>
             <a class="dropdown-item text-light" href="accountmaintenance.aspx">View Account</a>
             <a class="dropdown-item text-light" href="update.aspx">Update Account</a>
+            <a class="dropdown-item text-light" href="add.aspx">Add Account</a>
         </div>
       </li>
 </asp:Content>
@@ -42,7 +44,7 @@
         <div runat="server" class="card container shadow w-75">
             <div class="card-title my-3 text-center">
                 <asp:Label ID="lblTitle" runat="server" CssClass="lead text-large"></asp:Label>
-            </div>
+            </div>zz
 
 <!--STUDENT TABLE-->
            <asp:GridView runat="server" ID="gvStudent" GridLines="None" AutoGenerateColumns="false" CssClass="table">
@@ -92,7 +94,7 @@
             <hr class="w-75 mt-5 mx-auto" />
             <div class="row w-100 mt-2 mb-4" >
                 <div class="col">
-                    <asp:Button runat="server" ID="btnCancel" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:history.go(1);return false;"/>
+                    <asp:Button runat="server" ID="btnCancel" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click"/>
                 </div>
                 <div class="col">
                     <asp:Button runat="server" ID="btnUpdate" Text="Update Account" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click"/>

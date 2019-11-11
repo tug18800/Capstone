@@ -5,18 +5,27 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <nav class="navbar navbar-expand-lg navbar-dark bg-owl">
-      <a class="navbar-brand" href="#">ISSS Rewards</a>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" href="home.aspx">Home</a>
-            <a class="nav-item nav-link" href="events.aspx">Events</a>
-            <a class="nav-item nav-link" href="rewards.aspx">Rewards</a>
+        <a class="navbar-brand" href="home.aspx">ISSS Rewards</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item active">
+                 <a class="nav-link" href="home.aspx">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="events.aspx">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rewards.aspx">Rewards</a>
+                </li>
+            </ul>
         </div>
-      </div>
     </nav>
     <asp:ContentPlaceHolder ID="nestedBody" runat="server"></asp:ContentPlaceHolder>
-    <footer class="container fixed-bottom">
-        <hr />
-        <p class="lead footer-text text-center">&copy; Temple International Students and Services, 2019</p>
+   <footer class="fixed-bottom bg-dark mt-5" style="height: 33px;">
+        <p class="lead footer-text text-muted text-center mt-2">&copy; Temple International Students and Services, 2019</p>
     </footer>
 </asp:Content>

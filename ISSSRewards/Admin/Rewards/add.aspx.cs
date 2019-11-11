@@ -17,7 +17,7 @@ namespace ISSSRewards.Admin.Rewards
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("view.aspx");
+            Response.Redirect("rewards.aspx");
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

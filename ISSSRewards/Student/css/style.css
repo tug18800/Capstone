@@ -5,7 +5,13 @@
     padding: 0;
 }
 
-.bg-owl {
+.bg-owl 
+{
+    background-color: #8c2132 !important;
+}
+
+.text-owl 
+{
     background-color: #8c2132;
 }
 
@@ -16,4 +22,20 @@
 .footer-text
 {
     font-size: .8rem !important;
+}
+
+.gv-image
+{
+    width:125px;
+    height: 100px;
+}
+
+.result-img {
+    width: 292px;
+    height: 267px;
+}
+
+.m-bottom
+{
+    margin-bottom: 100px;
 }

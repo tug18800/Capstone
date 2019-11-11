@@ -25,9 +25,7 @@ namespace ISSSRewards.Admin.Events
                 }
 
                 BindDDL(list);
-                List<Event> inital = new List<Event>();
-                inital.Add(list[0]);
-                BindEventGV(inital);
+                BindEventGV(list);
             }
             
         }
@@ -128,10 +126,10 @@ namespace ISSSRewards.Admin.Events
             gvEvents.Visible = true;
         }
 
-        private void BindResultsGV()
+        private void BindResultsGV(Event ev)
         {
-            list = Session["eList"] as List<Event>;
-            List<Event> result = GetEvent();
+            List<Event> result = new List<Event>();
+            result.Add(ev);
             gvResults.DataSource = result[0].Att.List;
             gvResults.DataBind();
             gvResults.Visible = true;
@@ -175,7 +173,10 @@ namespace ISSSRewards.Admin.Events
 
         protected void gvEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BindResultsGV();
+            list = Session["eList"] as List<Event>;
+            string id = gvEvents.SelectedRow.Cells[0].Text;
+            ev = list[list.FindIndex(item => item.ID == id)];
+            BindResultsGV(ev);
             resultsHeader.Visible = true;
             btnUpload.Enabled = true;
         }
@@ -190,7 +191,15 @@ namespace ISSSRewards.Admin.Events
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("events.aspx");
+            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            {
+                Response.Redirect("events.aspx");
+            }
+            else
+            {
+                Session["Prev"] = Request.UrlReferrer.ToString();
+                Response.Redirect(Request.QueryString["Prev"]);
+            }
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)

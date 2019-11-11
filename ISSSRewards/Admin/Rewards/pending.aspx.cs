@@ -15,7 +15,9 @@ namespace ISSSRewards.Admin.Rewards
         {
             if (!IsPostBack)
             {
-                gvRewards.DataSource = GetData();
+                DataTable dt = GetData();
+                Session["dt"] = dt;
+                gvRewards.DataSource = dt;
                 gvRewards.DataBind();
             }
         }
@@ -71,8 +73,8 @@ namespace ISSSRewards.Admin.Rewards
             lblStatus.Text = "An email has been sent to Test Testly about their denial!";
             lblStatus.Visible = true;
 
-            DataTable dt = GetData();
-            dt.Rows[0].Delete();
+            DataTable dt = Session["dt"] as DataTable;
+            dt.Rows[e.RowIndex].Delete();
             gvRewards.DataSource = dt;
             gvRewards.DataBind();
         }
@@ -82,8 +84,8 @@ namespace ISSSRewards.Admin.Rewards
             lblStatus.Text = "Confirmation email sent!";
             lblStatus.Visible = true;
 
-            DataTable dt = GetData();
-            dt.Rows[0].Delete();
+            DataTable dt = Session["dt"] as DataTable;
+            dt.Rows[gvRewards.SelectedIndex].Delete();
             gvRewards.DataSource = dt;
             gvRewards.DataBind();
         }
@@ -93,6 +95,17 @@ namespace ISSSRewards.Admin.Rewards
 
         }
 
-      
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            {
+                Response.Redirect("rewards.aspx");
+            }
+            else
+            {
+                Session["Prev"] = Request.UrlReferrer.ToString();
+                Response.Redirect(Request.QueryString["Prev"]);
+            }
+        }
     }
 }

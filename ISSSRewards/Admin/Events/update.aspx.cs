@@ -101,6 +101,7 @@ namespace ISSSRewards.Admin.Events
             }
 
             Session["eList"] = list;
+            Session["Prev"] = Request.UrlReferrer.ToString();
 
             Response.Redirect("view.aspx?id=" + id);
         }
@@ -108,6 +109,7 @@ namespace ISSSRewards.Admin.Events
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             string id = lblID.Text;
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("view.aspx?id=" + id);
         }
     }

@@ -94,13 +94,13 @@ namespace ISSSRewards.Admin.Rewards {
         protected global::System.Web.UI.WebControls.Label lblPoints;
         
         /// <summary>
-        /// btnBack control.
+        /// Back control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBack;
+        protected global::System.Web.UI.WebControls.Button Back;
         
         /// <summary>
         /// btnUpdate control.

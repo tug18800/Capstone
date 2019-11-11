@@ -75,6 +75,43 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            divConfirm.Visible = true;
+
+            btnCancel1.Visible = true;
+            btnCancel.Visible = false;
+
+            btnConfirm.Visible = true;
+            btnAdd.Visible = false;
+        }
+
+        private void FillPrivilages(Admins a)
+        {
+
+            for (int i = 0; i < ckbxPrivleges.Items.Count; i++)
+            {
+                a.Permissions.Add(ckbxPrivleges.Items[i].Selected);
+            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Session["Prev"] = Request.UrlReferrer.ToString();
+            Response.Redirect("accountmaintenance.aspx");
+        }
+
+        protected void btnCancel1_Click(object sender, EventArgs e)
+        {
+            divConfirm.Visible = false;
+
+            btnCancel1.Visible = false ;
+            btnCancel.Visible = true;
+
+            btnConfirm.Visible = false;
+            btnAdd.Visible = true;
+        }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
             string id = gvAccount.Rows[0].Cells[0].Text;
             accounts = (List<Users>)Session["accounts"];
 
@@ -92,21 +129,8 @@ namespace ISSSRewards.Admin.Accounts
                 }
             }
 
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("accountmaintenance.aspx");
-        }
-
-        private void FillPrivilages(Admins a)
-        {
-
-            for (int i = 0; i < ckbxPrivleges.Items.Count; i++)
-            {
-                a.Permissions.Add(ckbxPrivleges.Items[i].Selected);
-            }
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("accountmaintanence.aspx");
         }
     }
 }

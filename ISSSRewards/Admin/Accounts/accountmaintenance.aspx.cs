@@ -76,7 +76,15 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../dashboard.aspx");
+            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            {
+                Response.Redirect("../dashboard.aspx");
+            }
+            else
+            {
+                Session["Prev"] = Request.UrlReferrer.ToString();
+                Response.Redirect(Request.QueryString["Prev"]);
+            }
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)

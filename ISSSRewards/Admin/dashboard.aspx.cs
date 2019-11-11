@@ -113,12 +113,13 @@ namespace ISSSRewards.Admin
         protected void gvEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
             string id = gvEvents.SelectedRow.Cells[0].Text;
-
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("Events/view.aspx?id=" + id);
         }
 
         protected void gvRewards_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("Rewards/pending.aspx");
         }
     }

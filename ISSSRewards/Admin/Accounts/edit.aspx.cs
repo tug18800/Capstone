@@ -97,6 +97,8 @@ namespace ISSSRewards.Admin.Accounts
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("view.aspx");
         }
 
@@ -104,6 +106,8 @@ namespace ISSSRewards.Admin.Accounts
         {
             Students s = Session["student"] as Students;
             Session["user"] = (Users)s;
+
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("view.aspx");
 
         }
@@ -249,10 +253,6 @@ namespace ISSSRewards.Admin.Accounts
             Session["student"] = s as Users;
         }
 
-        protected void gvEvents_DataBinding(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

@@ -14,22 +14,33 @@ namespace ISSSRewards.Admin.Events
         {
 
         }
-
-        protected void btnCancel_Click(object sender, EventArgs e)
+       
+        protected List<Event> LoadEventList()
         {
-            Response.Redirect("view.aspx");
+            List<Event> list = new List<Event>();
+            Event ev = new Event("1", "Sample Event1", "01/01/2019", 250);
+            list.Add(ev);
+            ev = new Event("2", "Sample Event2", "02/02/2019", 250);
+            list.Add(ev);
+            ev = new Event("3", "Sample Event3", "03/03/2019", 250);
+            list.Add(ev);
+            ev = new Event("4", "Sample Event4", "04/04/2019", 250);
+            list.Add(ev);
+            ev = new Event("5", "Sample Event5", "05/05/2019", 250);
+            list.Add(ev);
+            return list;
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            List<Event> list = (List <Event>)Session["eList"];
-            if(list == null)
+            List<Event> list = (List<Event>)Session["eList"];
+            if (list == null)
             {
                 LoadEventList();
             }
 
             string id = "0";
-            if(list.Count > 0)
+            if (list.Count > 0)
             {
                 id = (Convert.ToInt32(list[list.Count - 1].ID) + 1).ToString();
             }
@@ -47,24 +58,22 @@ namespace ISSSRewards.Admin.Events
             list.Add(ev);
 
             Session["eList"] = list;
-
+            Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("events.aspx");
         }
 
-        protected List<Event> LoadEventList()
+        protected void btnCancel_Click(object sender, EventArgs e)
         {
-            List<Event> list = new List<Event>();
-            Event ev = new Event("1", "Sample Event1", "01/01/2019", 250);
-            list.Add(ev);
-            ev = new Event("2", "Sample Event2", "02/02/2019", 250);
-            list.Add(ev);
-            ev = new Event("3", "Sample Event3", "03/03/2019", 250);
-            list.Add(ev);
-            ev = new Event("4", "Sample Event4", "04/04/2019", 250);
-            list.Add(ev);
-            ev = new Event("5", "Sample Event5", "05/05/2019", 250);
-            list.Add(ev);
-            return list;
+            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            {
+                Response.Redirect("events.aspx");
+            }
+            else
+            {
+                Session["Prev"] = Request.UrlReferrer.ToString();
+                Response.Redirect(Request.QueryString["Prev"]);
+            }
         }
+
     }
 }
