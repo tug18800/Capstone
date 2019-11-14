@@ -43,6 +43,7 @@ namespace ISSSRewards.Student
                     lblCurrentPoints.Text = student.Points.ToString();
                     imgReward.ImageUrl = reward.Picture;
 
+                    lblPointsNav.Text = student.Points.ToString();
 
                     if (reward.Quantity == 0)
                     {

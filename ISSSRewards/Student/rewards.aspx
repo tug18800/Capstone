@@ -2,6 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="nestedHead" runat="server">
     <title>Rewards</title>
 </asp:Content>
+
+<asp:Content ID="points" ContentPlaceHolderID="points" runat="server">
+    <asp:Label ID="lblPointsNav" runat="server" CssClass="h4 text-light mb-1 mr-3"></asp:Label>
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
     <div class="container">
         <p class="text-center display-4">Rewards</p>

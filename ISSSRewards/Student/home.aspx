@@ -3,19 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="nestedHead" runat="server">
     <title>Home</title>
 </asp:Content>
+
+<asp:Content ID="points" ContentPlaceHolderID="points" runat="server">
+    <asp:Label ID="lblPointsNav" runat="server" CssClass="h4 text-light mb-1 mr-3"></asp:Label>
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
     <div class="container m-bottom">
         <p class="text-center display-4">Home</p>
             <hr />
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="text-center"> 
-                    <p class="text-center h3">Current Points</p>
-                    <asp:Label ID="lblPoints" runat="server" CssClass="lead"></asp:Label>
-                    </div>
-                  </div>
-            </div>
-                <hr />
             <div class="row mb-5">
                 <div class="col-sm-12">
                     <div class="text-center bg-owl text-light py-2 rounded"> 

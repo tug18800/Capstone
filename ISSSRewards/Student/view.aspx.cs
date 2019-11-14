@@ -10,17 +10,26 @@ namespace ISSSRewards.Student
 {
     public partial class view : System.Web.UI.Page
     {
+        Students student;
         List<Event> list;
         Event ev;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                student = Session["student"] as Students;
+                
+                if(student == null)
+                {
+                    Response.Redirect("../login.aspx");
+                }
                 if(!string.IsNullOrEmpty(Request.QueryString["id"]))
                 {
                     string id = Request.QueryString["id"];
                     list = LoadEventList();
                     ev = list[list.FindIndex(result => result.ID == id)];
+
+                    lblPointsNav.Text = student.Points.ToString();
 
                     lblTitle.Text = ev.Title;
                     lblDate.Text = ev.Date;
