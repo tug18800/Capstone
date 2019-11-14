@@ -65,6 +65,10 @@
             <div class="row">
                 <div class="col text-center my-2"><a class="lead" href="view.aspx?id=5">Order Complete Email</a></div>
             </div>
+             <div class="row"><hr class="w-75" /></div>
+            <div class="row">
+                <div class="col text-center my-2"><a class="lead" href="view.aspx?id=6">End of Term Points Reminder</a></div>
+            </div>
 <!--BACK NAVIGATION-->
             <div class="row w-100 mt-3 mb-3">
                 <div class="col">

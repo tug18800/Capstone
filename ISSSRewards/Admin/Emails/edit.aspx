@@ -38,7 +38,7 @@
         <p class="text-center h1 mb-5">Emails</p>
         <div class="card container shadow">
             <div class="row">
-                <div class="col bg-owl text-center my-0"><asp:Label ID="lblType" runat="server" CssClass="lead text-large text-light my-1"></asp:Label></div>
+                <div class="col bg-owl text-center my-0"><p class="lead text-large text-light my-1">Update Email</p></div>
             </div>
             <div class="row mt-2 mb-0">
                 <div class="col"><p class="lead d-inline">Title: </p><asp:TextBox runat="server" ID="txtTitle" CssClass="text-left d-inline w-100" ></asp:TextBox></div>

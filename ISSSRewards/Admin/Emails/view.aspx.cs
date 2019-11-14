@@ -38,6 +38,8 @@ namespace ISSSRewards.Admin.Emails
                 case "3": emailType = "Order Confirmation"; break;
                 case "4": emailType = "Pending Reward Notification"; break; 
                 case "5": emailType = "Order Complete Notifcation"; break;
+                case "6": emailType = "End of Term Points Reminder"; break;
+
             }
 
             return emailType + " Email";
