@@ -11,7 +11,6 @@
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-light" href="events.aspx">View Events</a>
             <a class="dropdown-item text-light" href="attendance.aspx">Event Attendence</a>
-            <a class="dropdown-item text-light" href="update.aspx">Update Event</a>
             <a class="dropdown-item text-light" href="add.aspx">Add Event</a>
         </div>
     </li>
@@ -19,8 +18,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rewards</a>
         <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-light" href="../Rewards/rewards.aspx">View Rewards</a>
-            <a class="dropdown-item text-light" href="../Rewards/pending.aspx">View Pending Rewards</a>
-            <a class="dropdown-item text-light" href="../Rewards/update.aspx">Update Reward</a>
+            <a class="dropdown-item text-light" href="../Rewards/pending.aspx">View Pending Orders</a>
             <a class="dropdown-item text-light" href="../Rewards/add.aspx">Add Reward</a>
         </div>
       </li>
