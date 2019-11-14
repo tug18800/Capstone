@@ -25,6 +25,17 @@ namespace ISSSRewards.Admin.Emails
 
                 
             }
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
+
+            }
         }
 
         private string GetEmailType()

@@ -22,6 +22,18 @@ namespace ISSSRewards.Admin
             BindGV(gvEvents, events);
             BindGV(gvRewards, rewards);
 
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
+
+            }
+
         }
 
         private void BindGV(GridView gridView, DataTable dt)
@@ -121,6 +133,13 @@ namespace ISSSRewards.Admin
         {
             Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("Rewards/pending.aspx");
+        }
+
+        protected void btnNewTerm_Click(object sender, EventArgs e)
+        {
+            lblTerm.Text = "TERM SPRING 2020";
+
+            Session["Term"] = lblTerm.Text;
         }
     }
 }

@@ -19,6 +19,10 @@
     background-color: #8c2132 !important;
 }
 
+.bg-owl-dark {
+    background-color: #701a28;
+}
+
 .bg-error {
     background-color: #ffbaba;
     color: #8B0000;
@@ -43,9 +47,13 @@
     font-size: 3rem !important;
 }
 
-.subNavLinks a:hover 
-{
-    background-color: #8c2132 !important;
+.subNavLinks {
+    background-color: #701a28 !important;
+}
+
+.subNavLinks a:hover {
+    background-color: #621723 !important;
+    color: white;
 }
 
 .text-area-h
