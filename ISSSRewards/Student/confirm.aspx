@@ -9,7 +9,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
     <div class="container m-bottom">
-        <p class="text-center h1 mb-3">Rewards</p>   
+        <div class="text-center">
+            <img src="img/icons/giftbox.png" class="img-display d-inline mr-3 mb-4" /><p class="text-center d-inline display-4">Rewards</p><img src="img/icons/giftbox.png" class="img-display d-inline ml-3 mb-4" />   
+        </div>
         
 <!--TITLE-->
         <div class="card container shadow">

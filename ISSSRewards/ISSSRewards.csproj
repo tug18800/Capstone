@@ -95,8 +95,10 @@
     <Content Include="Student\events.aspx" />
     <Content Include="Student\home.aspx" />
     <Content Include="Student\img\chipotle.png" />
+    <Content Include="Student\img\icons\calendar.png" />
     <Content Include="Student\img\icons\coin.png" />
     <Content Include="Student\img\icons\coin2.png" />
+    <Content Include="Student\img\icons\giftbox.png" />
     <Content Include="Student\img\img.png" />
     <Content Include="Student\img\temple t-shirt.jpg" />
     <Content Include="Student\img\temple wb.jpg" />

@@ -15,7 +15,7 @@
             <div class="row mb-5">
                 <div class="col-sm-12">
                     <div class="text-center bg-owl text-light py-2 rounded"> 
-                        <p class="text-center h5">Upcoming Events</p>
+                        <img src="img/icons/calendar.png" class="img-nav d-inline mr-3" /><p class="text-center h5 d-inline">Upcoming Events</p><img src="img/icons/calendar.png" class="img-nav d-inline ml-3" />
                         </div>
                         <asp:GridView ID="gvEvents" runat="server" AutoGenerateColumns="false" GridLines="None" CssClass="table my-0" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged">
                             <Columns>
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="text-center bg-owl text-light py-2 rounded"> 
-                        <p class="text-center h5">Recently Added Rewards</p>
+                        <img src="img/icons/giftbox.png" class="img-nav d-inline mr-3" /><p class="text-center h5 d-inline">Recently Added Rewards</p><img src="img/icons/giftbox.png" class="img-nav d-inline ml-3" />
                         </div>
                         <asp:GridView ID="gvRewards" runat="server" AutoGenerateColumns="false" GridLines="None" CssClass="table my-0" OnSelectedIndexChanged="gvRewards_SelectedIndexChanged">
                             <Columns>
