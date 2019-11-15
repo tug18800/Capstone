@@ -12,7 +12,17 @@ namespace ISSSRewards.Admin.Events
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
 
+            }
         }
        
         protected List<Event> LoadEventList()
@@ -64,7 +74,7 @@ namespace ISSSRewards.Admin.Events
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            if (string.IsNullOrEmpty(Session["Prev"] as string))
             {
                 Response.Redirect("events.aspx");
             }

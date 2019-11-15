@@ -14,6 +14,7 @@ namespace ISSSRewards.Admin.Events
         Event ev;
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<Event> result = new List<Event>();
             if (!IsPostBack)
             {
                 list = (List<Event>)Session["eList"];
@@ -22,12 +23,41 @@ namespace ISSSRewards.Admin.Events
                 {
                     list = LoadEventList();
                     Session["eList"] = list;
+                    result = list;
                 }
 
-                BindDDL(list);
-                BindEventGV(list);
+                
+                string id = Request.QueryString["id"];
+                if (!string.IsNullOrEmpty(id))
+                {
+                    result = LoadEvent(list);
+                }
+
+                BindDDL(result);
+                BindEventGV(result);
             }
-            
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
+
+            }
+
+
+        }
+
+        private List<Event> LoadEvent(List<Event> list)
+        {
+            string id = Request.QueryString["id"];
+            Event ev =  list[list.FindIndex(item => item.ID == id)];
+            List<Event> result = new List<Event>();
+            result.Add(ev);
+            return result;
         }
 
         protected List<Event> LoadEventList()
@@ -189,18 +219,6 @@ namespace ISSSRewards.Admin.Events
             BindResultsGV(ev.Att.List);
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
-            {
-                Response.Redirect("events.aspx");
-            }
-            else
-            {
-                Session["Prev"] = Request.UrlReferrer.ToString();
-                Response.Redirect(Request.QueryString["Prev"]);
-            }
-        }
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {

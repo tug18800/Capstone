@@ -25,6 +25,18 @@ namespace ISSSRewards.Admin.Accounts
                 FillAccounts(accounts);
                 Session["accounts"] = accounts;
             }
+
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
+
+            }
         }
 
         private void FillAccounts(List<Users> accounts)
@@ -93,11 +105,6 @@ namespace ISSSRewards.Admin.Accounts
             }
         }
 
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            Session["Prev"] = Request.UrlReferrer.ToString();
-            Response.Redirect("accountmaintenance.aspx");
-        }
 
         protected void btnCancel1_Click(object sender, EventArgs e)
         {

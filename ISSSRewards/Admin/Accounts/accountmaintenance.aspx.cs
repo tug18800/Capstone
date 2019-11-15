@@ -23,6 +23,18 @@ namespace ISSSRewards.Admin.Accounts
                 Session["list"] = users;
             }
 
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
+
+            }
+
         }
 
         private List<Users> LoadUsers()
@@ -71,19 +83,6 @@ namespace ISSSRewards.Admin.Accounts
                     lblStatus.Text = "Account Not Found!";
                     lblStatus.Visible = true;
                 }
-            }
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
-            {
-                Response.Redirect("../dashboard.aspx");
-            }
-            else
-            {
-                Session["Prev"] = Request.UrlReferrer.ToString();
-                Response.Redirect(Request.QueryString["Prev"]);
             }
         }
 

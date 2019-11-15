@@ -24,6 +24,8 @@ namespace ISSSRewards.Student
                     Session["rList"] = list;
                 }
 
+                lblPointsNav.Text = student.Points.ToString();
+
                 BindRewardGV(list);
                 
             }

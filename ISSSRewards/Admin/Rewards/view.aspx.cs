@@ -51,6 +51,18 @@ namespace ISSSRewards.Admin.Rewards
                     lblStatus.Visible = true;
                 }
             }
+
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
+
+            }
         }
 
         private Reward LoadReward(List<Reward> list, string id)
@@ -94,19 +106,6 @@ namespace ISSSRewards.Admin.Rewards
             string id = lblID.Text;
             Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("update.aspx?id=" + id);
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
-            {
-                Response.Redirect("rewards.aspx");
-            }
-            else
-            {
-                Session["Prev"] = Request.UrlReferrer.ToString();
-                Response.Redirect(Request.QueryString["Prev"]);
-            }
-        }
+        }        
     }
 }

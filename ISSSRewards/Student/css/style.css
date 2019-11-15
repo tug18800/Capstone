@@ -10,6 +10,7 @@
     background-color: #8c2132 !important;
 }
 
+
 .text-owl 
 {
     background-color: #8c2132;
@@ -38,4 +39,24 @@
 .m-bottom
 {
     margin-bottom: 100px;
+}
+
+.img-nav
+{
+    width: 25px;
+    height: 25px;
+}
+
+
+.display-6
+{
+    font-size: 1.75rem;
+}
+
+@media screen and (max-width: 892px)
+{
+
+    #navbarSupportedContent {
+        background-color: #621723 !important;
+    }
 }

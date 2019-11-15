@@ -25,6 +25,17 @@ namespace ISSSRewards.Admin.Emails
 
                 
             }
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
+
+            }
         }
 
         private string GetEmailType()
@@ -38,6 +49,8 @@ namespace ISSSRewards.Admin.Emails
                 case "3": emailType = "Order Confirmation"; break;
                 case "4": emailType = "Pending Reward Notification"; break; 
                 case "5": emailType = "Order Complete Notifcation"; break;
+                case "6": emailType = "End of Term Points Reminder"; break;
+
             }
 
             return emailType + " Email";

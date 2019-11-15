@@ -7,13 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ISSSRewards.Admin.Events
-{
-
-
-    public partial class events
-    {
-
+namespace ISSSRewards.Admin.Events {
+    
+    
+    public partial class events {
+        
+        /// <summary>
+        /// lblTerm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTerm;
+        
         /// <summary>
         /// txtID control.
         /// </summary>
@@ -22,7 +29,7 @@ namespace ISSSRewards.Admin.Events
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtID;
-
+        
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -31,7 +38,7 @@ namespace ISSSRewards.Admin.Events
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-
+        
         /// <summary>
         /// btnAll control.
         /// </summary>
@@ -40,7 +47,7 @@ namespace ISSSRewards.Admin.Events
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAll;
-
+        
         /// <summary>
         /// lblStatus control.
         /// </summary>
@@ -49,7 +56,7 @@ namespace ISSSRewards.Admin.Events
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStatus;
-
+        
         /// <summary>
         /// gvEvents control.
         /// </summary>
@@ -58,7 +65,7 @@ namespace ISSSRewards.Admin.Events
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvEvents;
-
+        
         /// <summary>
         /// btnBack control.
         /// </summary>
@@ -67,7 +74,7 @@ namespace ISSSRewards.Admin.Events
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBack;
-
+        
         /// <summary>
         /// btnAdd control.
         /// </summary>

@@ -43,6 +43,7 @@ namespace ISSSRewards.Student
                     lblCurrentPoints.Text = student.Points.ToString();
                     imgReward.ImageUrl = reward.Picture;
 
+                    lblPointsNav.Text = student.Points.ToString();
 
                     if (reward.Quantity == 0)
                     {
@@ -80,15 +81,9 @@ namespace ISSSRewards.Student
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            string prev = Session["Prev"] as string;
-            if (!string.IsNullOrEmpty(prev))
-            {
-                Response.Redirect(prev);
-            }
-            else
-            {
-                Response.Redirect("events.aspx");
-            }
+            
+            Response.Redirect("events.aspx");
+            
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)

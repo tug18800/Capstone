@@ -28,6 +28,8 @@ namespace ISSSRewards.Student
                     Response.Redirect("../login.aspx");
                 }
 
+                lblPointsNav.Text = student.Points.ToString();
+
                 BindEventGV(list);
 
             }

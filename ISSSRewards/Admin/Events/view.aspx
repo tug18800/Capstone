@@ -5,29 +5,30 @@
     <link href="../css/style.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content runat="server" ID="ContentNavLinks" ContentPlaceHolderID="navLinks">
+    <li class="nav-item mr-3 bg-owl-dark rounded">
+        <asp:Label runat="server" ID="lblTerm" CssClass="nav-link pb-0 mb-0 d-block active">TERM FALL 2019 </asp:Label>
+    </li>
   <li class="nav-item"><a class="nav-link" href="../dashboard.aspx">Dashboard</a></li>
   <li class="nav-item"><a class="nav-link" href="../Emails/email.aspx">Emails</a></li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
-        <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu subNavLinks" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-light" href="events.aspx">View Events</a>
             <a class="dropdown-item text-light" href="attendance.aspx">Event Attendence</a>
-            <a class="dropdown-item text-light" href="update.aspx">Update Event</a>
             <a class="dropdown-item text-light" href="add.aspx">Add Event</a>
         </div>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rewards</a>
-        <div class="dropdown-menu bg-danger subNavLinks" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu subNavLinks" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-light" href="../Rewards/rewards.aspx">View Rewards</a>
-            <a class="dropdown-item text-light" href="../Rewards/pending.aspx">View Pending Rewards</a>
-            <a class="dropdown-item text-light" href="../Rewards/update.aspx">Update Reward</a>
+            <a class="dropdown-item text-light" href="../Rewards/pending.aspx">View Pending Orderss</a>      
             <a class="dropdown-item text-light" href="../Rewards/add.aspx">Add Reward</a>
         </div>
       </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account Maintenance</a>
-        <div class="dropdown-menu subNavLinks bg-danger" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu subNavLinks" aria-labelledby="navbarDropdown">
             <a class="dropdown-item text-light" href="../Accounts/accountmaintenance.aspx">View Account</a>
             <a class="dropdown-item text-light" href="../Accounts/update.aspx">Update Account</a>
             <a class="dropdown-item text-light" href="../Accounts/add.aspx">Add Account</a>
@@ -58,7 +59,7 @@
 
 <!--EVENT CONTENT-->
                 <asp:Label runat="server" Visible ="false" ID="lblID"></asp:Label>                
-                <asp:Label runat="server" CssClass="lead d-block bg-owl text-light text-center" ID="lblTitle"></asp:Label>
+                <asp:Label runat="server" CssClass="lead d-block bg-owl text-light text-center py-2" ID="lblTitle"></asp:Label>
                 <div id="EventSection" class="row" runat="server">
 <!--PICTURE COL-->                
                     <div class="col-4 mt-4"><img src="../img/img.png" class="result-img" /></div>
@@ -66,7 +67,7 @@
 <!--DATE/DESC COL-->
                     <div class="col-5 mt-4 pl-5">
                         <div class="row">
-                            <p class="d-inline lead font-weight-bold">Date: </p><asp:Label runat="server" CssClass="lead d-block" ID="lblDate"></asp:Label>
+                            <p class="d-inline lead font-weight-bold">Date: </p><asp:Label runat="server" CssClass="lead d-block ml-2" ID="lblDate"></asp:Label>
                         </div>
                         <div class="row">
                             <div class="text-left mt-4"><p class="lead d-block font-weight-bold">Description: </p></div>
@@ -78,12 +79,29 @@
                     <div class="col-3 mt-4 text-center">
                         <p class="lead d-inline font-weight-bold">Points: </p><asp:Label runat="server" CssClass="lead d-inline" ID="lblPoints"></asp:Label>
                     </div>
+                 </div>
+
+                <p class="h4 text-large text-center mt-5">RSVP Status</p>
+                <div class="w-75 d-block mx-auto mt-1">
+                    <asp:GridView runat="server" ID="gvRSVP" GridLines="None" CssClass="table table-hover" AutoGenerateColumns="false">
+                        <Columns>
+                            <asp:BoundField DataField="Cant" HeaderText="Can't Come" />
+                            <asp:BoundField DataField="Maybe" HeaderText="Maybe" />
+                            <asp:BoundField DataField="Coming" HeaderText="Coming" />
+                            <asp:BoundField DataField="Att" HeaderText="Actual" />
+
+                        </Columns>
+                    </asp:GridView>
                 </div>
+
 
 <!--BOTTOM NAVIGATION BUTTONS-->
                 <div class="row w-100 mt-5">
                     <div class="col">
-                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:history.go(1);return false;" />
+                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="JavaScript:window.history.go(-1);return false;" />
+                    </div>
+                    <div class="col">
+                        <asp:Button runat="server" ID="btnAtt" Text="Upload Attendance" CssClass="btn d-block mx-auto bg-owl text-light"  OnClick="btnAtt_Click" />
                     </div>
                     <div class="col">
                         <asp:Button runat="server" ID="btnUpdate" Text="Update Event" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click" />

@@ -28,7 +28,7 @@ namespace ISSSRewards.Student
             }
 
             student.CalcPoints();
-            lblPoints.Text = student.Points.ToString();
+            lblPointsNav.Text = student.Points.ToString();
 
             gvRewards.DataSource = LoadRewardList();
             gvRewards.DataBind();

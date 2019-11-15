@@ -19,7 +19,21 @@ namespace ISSSRewards.Admin.Rewards
                 Session["dt"] = dt;
                 gvRewards.DataSource = dt;
                 gvRewards.DataBind();
+
             }
+
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
+
+            }
+
         }
 
         public DataTable GetData()
@@ -94,18 +108,6 @@ namespace ISSSRewards.Admin.Rewards
         {
 
         }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
-            {
-                Response.Redirect("rewards.aspx");
-            }
-            else
-            {
-                Session["Prev"] = Request.UrlReferrer.ToString();
-                Response.Redirect(Request.QueryString["Prev"]);
-            }
-        }
+        
     }
 }

@@ -2,10 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="nestedHead" runat="server">
     <title>Events</title>
 </asp:Content>
+
+<asp:Content ID="points" ContentPlaceHolderID="points" runat="server">
+    <asp:Label ID="lblPointsNav" runat="server" CssClass="h4 text-light mb-1 mr-3"></asp:Label>
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
     <div class="container">
-        <p class="text-center display-4">Events</p>
-   
+        <div class="row">
+            <p class="text-center display-4">Events</p>
+        </div>
+ 
         <asp:GridView runat="server" ID="gvEvents" CssClass="table table-hover" AllowPaging="true" PageIndex="0" PageSize="5" AutoGenerateColumns="false" GridLines="None" OnSelectedIndexChanged="gvEvents_SelectedIndexChanged"
                       OnPageIndexChanging="gvEvents_PageIndexChanging">
             <Columns>

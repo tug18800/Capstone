@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/Student.master" AutoEventWireup="true" CodeBehind="view.aspx.cs" Inherits="ISSSRewards.Student.view" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="nestedHead" runat="server">
 </asp:Content>
+
+<asp:Content ID="points" ContentPlaceHolderID="points" runat="server">
+    <asp:Label ID="lblPointsNav" runat="server" CssClass="h4 text-light mb-1 mr-3"></asp:Label>
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="nestedBody" runat="server">
     <div class="container m-bottom">
         <p class="text-center h1 mb-3">Events</p>   
@@ -10,8 +15,9 @@
             <div class="card-body">
 
 <!--ERROR STATUS LABEL-->
-                <div class="text-center">
+                <div class="text-center mb-3">
                     <asp:Label ID="lblStatus" runat="server" Visible="false" CssClass="bg-error w-25 rounded px-3 py-1"></asp:Label>
+                    <asp:Label ID="lblSuccess" runat="server" Visible="false" CssClass="bg-success w-25 rounded px-3 py-1 text-light"></asp:Label>
                 </div>
 
 <!--EVENT CONTENT-->            
@@ -61,10 +67,34 @@
 
 <!--BOTTOM NAVIGATION BUTTONS-->
                 <div class="row mt-5">
-                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />            
+                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="JavaScript:window.history.go(-1);return false;" />     
+                    <button type="button" class="btn bg-owl text-light d-block mx-auto" data-toggle="modal" data-target="#exampleModal">RSVP</button>
                 </div>
             </div>
         </div>
     </div>
+
+<!--MODAL-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLabel">RSVP</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p class="lead text-center">How will you RSVP to the event?</p>
+                  </div>
+                <div class="modal-footer">
+                    <asp:Button runat="server" ID="btnRSVP1" Text="Can't Come" class="btn btn-danger d-block mx-auto" OnClick="btnRSVP_Click"/>
+                    <asp:Button runat="server" ID="btnRSVP2" Text="Maybe" class="btn btn-warning d-block mx-auto" OnClick="btnRSVP_Click"/>
+                    <asp:Button runat="server" ID="btnRSVP3" Text="Coming" class="btn btn-success d-block mx-auto" OnClick="btnRSVP_Click"/>
+
+                </div>
+                </div>
+            </div>
+        </div>
 </asp:Content>
     

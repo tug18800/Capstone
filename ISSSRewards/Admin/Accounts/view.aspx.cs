@@ -59,18 +59,17 @@ namespace ISSSRewards.Admin.Accounts
                     
                 }
             }
-        }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
             {
-                Response.Redirect("accountmaintenance.aspx");
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
             }
             else
             {
-                Session["Prev"] = Request.UrlReferrer.ToString();
-                Response.Redirect(Request.QueryString["Prev"]);
+                lblTerm.Text = term;
+
             }
         }
 

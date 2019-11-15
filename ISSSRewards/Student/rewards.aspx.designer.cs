@@ -13,6 +13,15 @@ namespace ISSSRewards.Student {
     public partial class rewards {
         
         /// <summary>
+        /// lblPointsNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPointsNav;
+        
+        /// <summary>
         /// gvRewards control.
         /// </summary>
         /// <remarks>

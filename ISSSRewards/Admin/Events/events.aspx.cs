@@ -32,6 +32,18 @@ namespace ISSSRewards.Admin.Events
                     BindEventGV(list);
                 }
             }
+
+            string term = Session["Term"] as string;
+            if (string.IsNullOrEmpty(term))
+            {
+                lblTerm.Text = "TERM FALL 2019";
+                Session["Term"] = lblTerm.Text;
+            }
+            else
+            {
+                lblTerm.Text = term;
+
+            }
         }
 
         //Simulates Converted Dataset from DB
@@ -88,19 +100,7 @@ namespace ISSSRewards.Admin.Events
             Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("events.aspx?id=" + id);
         }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if(string.IsNullOrEmpty(Request.QueryString["Prev"]))
-            {
-                Response.Redirect("../dashboard.aspx");
-            }
-            else
-            {
-                Session["Prev"] = Request.UrlReferrer.ToString();
-                Response.Redirect(Request.QueryString["Prev"]);
-            }
-        }
+     
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
