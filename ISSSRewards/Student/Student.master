@@ -32,6 +32,6 @@
     <asp:ContentPlaceHolder ID="nestedBody" runat="server"></asp:ContentPlaceHolder>
    <footer class="fixed-bottom bg-dark mt-5" style="height: 55px;">
         <p class="lead footer-text text-muted text-center mt-2 mb-0">&copy; Temple International Students and Services, 2019</p>
-       <div class="text-center footer-text text-muted">Icons made by <a href="https://www.flaticon.com/authors/creaticca-creative-agency" title="Creaticca Creative Agency">Creaticca Creative Agency</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+       <div class="text-center footer-text text-muted">Icons made by <a href="https://www.flaticon.com/authors/creaticca-creative-agency" title="Creaticca Creative Agency">Creaticca Creative Agency</a>, <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, and <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </footer>
 </asp:Content>
