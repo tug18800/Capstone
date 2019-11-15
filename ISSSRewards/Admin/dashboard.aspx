@@ -102,7 +102,7 @@
             </div>
              <div class="row">
                 <div class="col">
-                    <button type="button" class="btn bg-owl text-light d-block mx-auto" data-toggle="modal" data-target="#exampleModal"> Launch demo modal </button>
+                    <button type="button" class="btn bg-owl text-light d-block mx-auto" data-toggle="modal" data-target="#exampleModal">Start New Term</button>
                 </div>
             </div>
 

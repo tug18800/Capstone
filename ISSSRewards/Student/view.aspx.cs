@@ -25,6 +25,7 @@ namespace ISSSRewards.Student
                 }
                 if(!string.IsNullOrEmpty(Request.QueryString["id"]))
                 {
+                    ev = LoadEvent();
                     string id = Request.QueryString["id"];
                     list = LoadEventList();
                     ev = list[list.FindIndex(result => result.ID == id)];
@@ -43,6 +44,13 @@ namespace ISSSRewards.Student
                     lblStatus.Text = "You must select a valid event from the list!";
                 }
             }
+        }
+
+        private Event LoadEvent()
+        {
+            string id = Request.QueryString["id"];
+            list = LoadEventList();
+            return list[list.FindIndex(result => result.ID == id)];
         }
 
         protected List<Event> LoadEventList()
@@ -68,6 +76,24 @@ namespace ISSSRewards.Student
             {
                 Response.Redirect("events.aspx");
             }
+        }
+
+        protected void btnRSVP_Click(object sender, EventArgs e)
+        {
+            Button btnRSVP = sender as Button;
+            ev = LoadEvent();
+
+            string id = btnRSVP.ID;
+            lblSuccess.Text = "Your RSVP status for " + ev.Title + " has changed to ";
+
+            switch (id)
+            {
+                case "btnRSVP1": lblSuccess.Text += "\'Can't Come\'"; break;
+                case "btnRSVP2": lblSuccess.Text += "\'Maybe\'"; break;
+                case "btnRSVP3": lblSuccess.Text += "\'Coming\'"; break;
+            }
+
+            lblSuccess.Visible = true;
         }
     }
 }
