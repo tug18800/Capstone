@@ -59,7 +59,7 @@
 
 <!--EVENT CONTENT-->
                 <asp:Label runat="server" Visible ="false" ID="lblID"></asp:Label>                
-                <asp:Label runat="server" CssClass="lead d-block bg-owl text-light text-center" ID="lblTitle"></asp:Label>
+                <asp:Label runat="server" CssClass="lead d-block bg-owl text-light text-center py-2" ID="lblTitle"></asp:Label>
                 <div id="EventSection" class="row" runat="server">
 <!--PICTURE COL-->                
                     <div class="col-4 mt-4"><img src="../img/img.png" class="result-img" /></div>
@@ -67,7 +67,7 @@
 <!--DATE/DESC COL-->
                     <div class="col-5 mt-4 pl-5">
                         <div class="row">
-                            <p class="d-inline lead font-weight-bold">Date: </p><asp:Label runat="server" CssClass="lead d-block" ID="lblDate"></asp:Label>
+                            <p class="d-inline lead font-weight-bold">Date: </p><asp:Label runat="server" CssClass="lead d-block ml-2" ID="lblDate"></asp:Label>
                         </div>
                         <div class="row">
                             <div class="text-left mt-4"><p class="lead d-block font-weight-bold">Description: </p></div>
@@ -79,12 +79,29 @@
                     <div class="col-3 mt-4 text-center">
                         <p class="lead d-inline font-weight-bold">Points: </p><asp:Label runat="server" CssClass="lead d-inline" ID="lblPoints"></asp:Label>
                     </div>
+                 </div>
+
+                <p class="h4 text-large text-center mt-5">RSVP Status</p>
+                <div class="w-75 d-block mx-auto mt-1">
+                    <asp:GridView runat="server" ID="gvRSVP" GridLines="None" CssClass="table table-hover" AutoGenerateColumns="false">
+                        <Columns>
+                            <asp:BoundField DataField="Cant" HeaderText="Can't Come" />
+                            <asp:BoundField DataField="Maybe" HeaderText="Maybe" />
+                            <asp:BoundField DataField="Coming" HeaderText="Coming" />
+                            <asp:BoundField DataField="Att" HeaderText="Actual" />
+
+                        </Columns>
+                    </asp:GridView>
                 </div>
+
 
 <!--BOTTOM NAVIGATION BUTTONS-->
                 <div class="row w-100 mt-5">
                     <div class="col">
-                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="javascript:history.go(1);return false;" />
+                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />
+                    </div>
+                    <div class="col">
+                        <asp:Button runat="server" ID="btnAtt" Text="Upload Attendance" CssClass="btn d-block mx-auto bg-owl text-light"  OnClick="btnAtt_Click" />
                     </div>
                     <div class="col">
                         <asp:Button runat="server" ID="btnUpdate" Text="Update Event" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click" />

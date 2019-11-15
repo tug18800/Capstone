@@ -124,5 +124,6 @@ namespace ISSSRewards.Admin.Events
             Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("view.aspx?id=" + id);
         }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -43,6 +44,9 @@ namespace ISSSRewards.Admin.Events
                         lblStatus.Text = "An Error Occurrd!";
                         lblStatus.Visible = true;
                     }
+
+                    gvRSVP.DataSource = LoadRSVP(ev);
+                    gvRSVP.DataBind();
                    
                 }
                 else
@@ -95,6 +99,21 @@ namespace ISSSRewards.Admin.Events
             return list;
         }
 
+        protected DataTable LoadRSVP(Event ev)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Cant", typeof(int));
+            dt.Columns.Add("Maybe", typeof(int));
+            dt.Columns.Add("Coming", typeof(int));
+            dt.Columns.Add("Att", typeof(int));
+
+
+            dt.Rows.Add(2, 12, 25, ev.Att.List.Count);
+
+            return dt;
+        }
+
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             string id = txtID.Text;
@@ -118,6 +137,13 @@ namespace ISSSRewards.Admin.Events
         {
             string id = lblID.Text;
             Response.Redirect("update.aspx?id=" + id);
-        }      
+        }
+
+        protected void btnAtt_Click(object sender, EventArgs e)
+        {
+            string id = lblID.Text;
+            Session["Prev"] = Request.UrlReferrer.ToString();
+            Response.Redirect("attendance.aspx?id=" + id);
+        }
     }
 }

@@ -81,7 +81,7 @@
                         <asp:Button runat="server" ID="btnCancel" Text="Cancel" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click" />
                     </div>
                     <div class="col">
-                        <asp:Button runat="server" ID="btnUpdate" Text="" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click" />
+                        <asp:Button runat="server" ID="btnUpdate" Text="Update" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnUpdate_Click" />
                     </div>
                 </div>
             </div>

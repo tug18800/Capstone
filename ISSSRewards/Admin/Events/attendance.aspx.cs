@@ -14,6 +14,7 @@ namespace ISSSRewards.Admin.Events
         Event ev;
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<Event> result = new List<Event>();
             if (!IsPostBack)
             {
                 list = (List<Event>)Session["eList"];
@@ -22,10 +23,18 @@ namespace ISSSRewards.Admin.Events
                 {
                     list = LoadEventList();
                     Session["eList"] = list;
+                    result = list;
                 }
 
-                BindDDL(list);
-                BindEventGV(list);
+                
+                string id = Request.QueryString["id"];
+                if (!string.IsNullOrEmpty(id))
+                {
+                    result = LoadEvent(list);
+                }
+
+                BindDDL(result);
+                BindEventGV(result);
             }
             string term = Session["Term"] as string;
             if (string.IsNullOrEmpty(term))
@@ -40,6 +49,15 @@ namespace ISSSRewards.Admin.Events
             }
 
 
+        }
+
+        private List<Event> LoadEvent(List<Event> list)
+        {
+            string id = Request.QueryString["id"];
+            Event ev =  list[list.FindIndex(item => item.ID == id)];
+            List<Event> result = new List<Event>();
+            result.Add(ev);
+            return result;
         }
 
         protected List<Event> LoadEventList()
