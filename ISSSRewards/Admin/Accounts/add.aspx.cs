@@ -105,11 +105,6 @@ namespace ISSSRewards.Admin.Accounts
             }
         }
 
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-            Session["Prev"] = Request.UrlReferrer.ToString();
-            Response.Redirect("accountmaintenance.aspx");
-        }
 
         protected void btnCancel1_Click(object sender, EventArgs e)
         {

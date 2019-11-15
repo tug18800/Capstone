@@ -54,7 +54,7 @@
 <!--BACK NAVIGATION-->
             <div class="row w-100 mt-5">
                 <div class="col">
-                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light mb-3" OnClick="btnBack_Click" />
+                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light mb-3" OnClientClick="JavaScript:window.history.go(-1);return false;" />
                 </div>
                 <div class="col">
                     <asp:Button runat="server" ID="btnUpdate" Text="Update" CssClass="btn d-block mx-auto bg-owl text-light mb-3" OnClick="btnUpdate_Click" />

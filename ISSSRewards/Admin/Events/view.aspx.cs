@@ -118,20 +118,7 @@ namespace ISSSRewards.Admin.Events
         {
             string id = txtID.Text;
             Response.Redirect("view.aspx?id=" + id + "&prev=" + lblID.Text);
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
-            {
-                Response.Redirect("events.aspx");
-            }
-            else
-            {
-                Session["Prev"] = Request.UrlReferrer.ToString();
-                Response.Redirect(Request.QueryString["Prev"]);
-            }
-        }
+        }      
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {

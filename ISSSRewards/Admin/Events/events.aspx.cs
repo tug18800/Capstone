@@ -100,19 +100,7 @@ namespace ISSSRewards.Admin.Events
             Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("events.aspx?id=" + id);
         }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if(string.IsNullOrEmpty(Request.QueryString["Prev"]))
-            {
-                Response.Redirect("../dashboard.aspx");
-            }
-            else
-            {
-                Session["Prev"] = Request.UrlReferrer.ToString();
-                Response.Redirect(Request.QueryString["Prev"]);
-            }
-        }
+     
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {

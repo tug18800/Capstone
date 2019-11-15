@@ -78,7 +78,7 @@
             <hr class="mt-3 w-75 mx-auto mt-5" />
             <div class="row w-100 mb-4">
                 <div class="col">
-                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />
+                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="JavaScript:window.history.go(-1);return false;" />
                 </div>
                 <div class="col">
                 </div>

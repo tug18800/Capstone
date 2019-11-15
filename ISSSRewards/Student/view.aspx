@@ -67,7 +67,7 @@
 
 <!--BOTTOM NAVIGATION BUTTONS-->
                 <div class="row mt-5">
-                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />     
+                    <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="JavaScript:window.history.go(-1);return false;" />     
                     <button type="button" class="btn bg-owl text-light d-block mx-auto" data-toggle="modal" data-target="#exampleModal">RSVP</button>
                 </div>
             </div>

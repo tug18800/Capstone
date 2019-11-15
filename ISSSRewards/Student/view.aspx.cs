@@ -63,20 +63,7 @@ namespace ISSSRewards.Student
             ev = new Event("3", "Sample Event3", "12/20/2019", "This is Sample Event 3's description", "img/img.png", 250, "11/07/2019");
             list.Add(ev);
             return list;
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            string prev = Session["Prev"] as string;
-            if (!string.IsNullOrEmpty(prev))
-            {
-                Response.Redirect(prev);
-            }
-            else
-            {
-                Response.Redirect("events.aspx");
-            }
-        }
+        }  
 
         protected void btnRSVP_Click(object sender, EventArgs e)
         {

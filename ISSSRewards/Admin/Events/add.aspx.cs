@@ -74,7 +74,7 @@ namespace ISSSRewards.Admin.Events
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
+            if (string.IsNullOrEmpty(Session["Prev"] as string))
             {
                 Response.Redirect("events.aspx");
             }

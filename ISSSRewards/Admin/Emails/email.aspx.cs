@@ -49,19 +49,6 @@ namespace ISSSRewards.Admin
 
             return list;
         }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if(string.IsNullOrEmpty(Request.QueryString["Prev"]))
-            {
-                Response.Redirect("../dashboard.aspx");
-            }
-            else
-            {
-                string prev = Request.UrlReferrer.ToString();
-                Session["Prev"] = prev;
-                Response.Redirect((Request.QueryString["Prev"] as string));
-            }
-        }
+ 
     }
 }

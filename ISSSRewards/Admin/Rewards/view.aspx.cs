@@ -106,19 +106,6 @@ namespace ISSSRewards.Admin.Rewards
             string id = lblID.Text;
             Session["Prev"] = Request.UrlReferrer.ToString();
             Response.Redirect("update.aspx?id=" + id);
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(Request.QueryString["Prev"]))
-            {
-                Response.Redirect("rewards.aspx");
-            }
-            else
-            {
-                Session["Prev"] = Request.UrlReferrer.ToString();
-                Response.Redirect(Request.QueryString["Prev"]);
-            }
-        }
+        }        
     }
 }

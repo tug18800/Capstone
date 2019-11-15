@@ -98,7 +98,7 @@
 <!--BOTTOM NAVIGATION BUTTONS-->
                 <div class="row w-100 mt-5">
                     <div class="col">
-                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnBack_Click" />
+                        <asp:Button runat="server" ID="btnBack" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="JavaScript:window.history.go(-1);return false;" />
                     </div>
                     <div class="col">
                         <asp:Button runat="server" ID="btnAtt" Text="Upload Attendance" CssClass="btn d-block mx-auto bg-owl text-light"  OnClick="btnAtt_Click" />

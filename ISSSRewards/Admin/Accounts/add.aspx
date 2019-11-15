@@ -77,7 +77,7 @@
                 <hr class="w-75 mt-5 mx-auto" />
                 <div class="row w-100 mt-2 mb-4" >
                     <div class="col">
-                        <asp:Button runat="server" ID="btnCancel" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel_Click" />
+                        <asp:Button runat="server" ID="btnCancel" Text="Back" CssClass="btn d-block mx-auto bg-owl text-light" OnClientClick="JavaScript:window.history.go(-1);return false;" />
                         <asp:Button runat="server" ID="btnCancel1" Text="Cancel" CssClass="btn d-block mx-auto bg-owl text-light" OnClick="btnCancel1_Click" Visible="false"/>
 
                     </div>
